@@ -1,10 +1,8 @@
 # CHANGELOG
 
-## 4.4.0 RC1 · BUILD 005 · COACH ENGINE
-- Introdotto Training Plan con modalità AUTO / GOAL / MANUAL.
-- Aggiunta calendarizzazione su 2, 3 o 4 sedute settimanali.
-- Aggiunto motore di raccomandazione del prossimo programma.
-- Aggiunto avanzamento automatico del ciclo.
-- Aggiunta cronologia completa delle versioni PROJECT SC OS.
-- Separati storico workout, totali e timeline del progetto.
-- Nessuna funzione precedente rimossa.
+## 4.4.1 RC1 · BUILD 005F · PWA BOOT FIX
+- Corretto il mancato caricamento della Build 005 nella PWA installata.
+- Sostituita la strategia cache-first sulla navigazione con network-first.
+- Aggiornato e forzato il service worker.
+- Aggiunta pulizia delle vecchie cache.
+- Nessuna funzione della Build 005 rimossa.

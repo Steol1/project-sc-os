@@ -1,1 +1,11 @@
-{"name":"PROJECT SC OS 4.3 FUSION","short_name":"PROJECT SC","start_url":"./index.html","display":"standalone","background_color":"#080a0c","theme_color":"#080a0c","description":"Performance Engineering OS con Memory Engine e Atlante anatomico completo"}
+{
+  "name": "PROJECT SC OS 4.4.1",
+  "short_name": "PROJECT SC",
+  "description": "Intelligent Workout Operating System",
+  "start_url": "./?v=4.4.1",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary"
+}
