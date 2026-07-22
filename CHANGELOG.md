@@ -1,9 +1,8 @@
-# Changelog
+# CHANGELOG
 
-## 4.3.0 RC1 — Build 004 FUSION
-- Ripristinato integralmente l'Atlante anatomico v2.1.
-- Ripristinati corpo umano fronte/retro e muscoli cliccabili.
-- Ripristinati i link MuscleWiki nelle schede esercizio.
-- Aggiunto accesso MuscleWiki direttamente durante il workout.
-- Conservato il Memory Engine della Build 003.
-- Aggiornata la cache PWA per includere l'Atlante offline.
+## 4.3.1 RC1 · BUILD 004F
+- Corretto il disallineamento grafico dell'Atlante incorporato.
+- Eliminata la doppia intestazione del vecchio Atlante.
+- Migliorati spaziature, card, griglie e resa mobile.
+- Corretto il collegamento MuscleWiki di THE COBRA / Vertical Traction.
+- Aggiornata la cache PWA per forzare il caricamento della correzione.

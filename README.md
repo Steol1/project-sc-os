@@ -1,16 +1,10 @@
-# PROJECT SC OS 4.3.0 RC1 — BUILD 004 FUSION
+# PROJECT SC OS 4.3.1 RC1
+## BUILD 004F · ATLAS & LINK FIX
 
-Build cumulativa che unisce il Memory Engine della Build 003 con l'Atlante anatomico storico completo.
-
-## Ripristinato
-- corpo umano fronte/retro
-- muscoli segmentati e cliccabili
-- evidenziazione dinamica
-- schede esercizio complete
-- collegamenti MuscleWiki
-
-## Conservato
-- memoria automatica per ogni set
-- carico, ripetizioni e RPE precaricati
-- tutti i percorsi 3.1
-- storico, timer e PWA offline
+Correzioni:
+- Atlante incorporato riallineato allo stile e alle dimensioni della app.
+- Rimossi header e menu duplicati dentro l'Atlante.
+- Layout responsive ottimizzato per iPhone.
+- THE COBRA / Vertical Traction non apre più il video del Neutral Pulldown.
+- Collegamento THE COBRA riportato alla selezione MuscleWiki delle macchine per dorsali.
+- Memory Engine, programmi, storico e PWA invariati.
