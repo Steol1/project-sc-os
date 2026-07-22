@@ -1,10 +1,21 @@
-PROJECT SC OS 4.1.0 RC1 - BUILD 001F INPUT FIX
+PROJECT SC OS 4.1.1 RC1 - BUILD 002 EXPERIENCE
 
-Correzioni:
-- modificando il peso e passando a reps, il valore resta invariato;
-- selezionando un RPE, la schermata non viene più ricaricata;
-- peso, reps e RPE vengono mantenuti come bozza finché il set non viene completato.
+NOVITÀ
+- Timer recupero a schermo intero con anello dinamico.
+- Pulsanti +30 secondi e Salta.
+- Resume workout dalla Home.
+- Storico dell'esercizio e pulsante USE LAST.
+- Record per peso, ripetizioni e singolo set.
+- Riepilogo finale evoluto.
+- Grafica mobile più premium.
 
-Avvio:
-- apri index.html su PC;
-- oppure usa AVVIA_PROJECT_SC.bat dalla build precedente per test su iPhone.
+AGGIORNAMENTO GITHUB
+1. Estrai lo ZIP.
+2. Nel repository elimina o sostituisci index.html.
+3. Carica il nuovo index.html.
+4. Commit changes.
+5. Attendi circa un minuto e riapri l'app.
+
+NOTA IPHONE
+GitHub Pages e iPhone possono mantenere in cache la vecchia versione.
+Se non vedi BUILD 002, chiudi completamente l'app dalla schermata multitasking e riaprila.
