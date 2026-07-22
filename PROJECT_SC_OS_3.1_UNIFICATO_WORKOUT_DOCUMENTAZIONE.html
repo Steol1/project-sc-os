@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROJECT SC OS 3.1 UNIFIED</title>
+<style>
+:root{--bg:#050607;--panel:#0a0c0f;--line:#2a2f36;--text:#f2f4f6;--muted:#9199a3;--orange:#ff7800}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text)}
+.shellbar{height:58px;display:grid;grid-template-columns:280px 1fr auto;align-items:center;border-bottom:1px solid var(--line);background:#060708;padding:0 14px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.14em}.brand i{display:block;width:13px;height:32px;background:var(--orange);clip-path:polygon(50% 0,100% 25%,82% 100%,18% 100%,0 25%)}
+.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:.12em;margin-top:3px}
+.tabs{display:flex;justify-content:center;gap:8px}.tab{border:1px solid var(--line);background:#0b0d10;color:#cdd2d8;padding:9px 14px;border-radius:8px;font-size:10px;font-weight:800;cursor:pointer}
+.tab.active{border-color:var(--orange);background:var(--orange);color:#070809}.status{font-size:9px;color:var(--muted);text-align:right}
+.stage{height:calc(100% - 58px);position:relative}iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#050607;display:none}iframe.active{display:block}
+.link-toast{position:fixed;right:18px;bottom:18px;z-index:50;padding:11px 14px;border:1px solid var(--orange);background:#101216;color:#fff;border-radius:8px;font-size:10px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.22s}
+.link-toast.show{opacity:1;transform:none}
+@media(max-width:760px){.shellbar{grid-template-columns:1fr auto;height:64px}.tabs{justify-content:flex-end}.status{display:none}.tab{padding:8px 9px;font-size:8px}.stage{height:calc(100% - 64px)}}
+</style>
+</head>
+<body>
+<div class="shellbar">
+  <div class="brand"><i></i><div>PROJECT SC OS<small>UNIFIED PERFORMANCE SYSTEM 3.1</small></div></div>
+  <div class="tabs">
+    <button class="tab active" data-target="workoutFrame">WORKOUT MODE</button>
+    <button class="tab" data-target="docsFrame">MANUALE · ATLANTE · PIANI</button>
+  </div>
+  <div class="status">UN SOLO FILE · DATI LOCALI · DOCUMENTAZIONE COLLEGATA</div>
+</div>
+<div class="stage">
+  <iframe id="workoutFrame" class="active" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;it&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;PROJECT SC OS 3.0&lt;/title&gt;
+&lt;style&gt;
+:root{--bg:#050607;--p:#0b0d10;--p2:#111419;--l:#292e35;--t:#f2f4f6;--m:#9299a3;--o:#ff7800;--r:#e34c4c;--g:#39c66b;--b:#4aa7ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--t);font-family:Inter,Segoe UI,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+header{height:70px;position:sticky;top:0;z-index:30;display:grid;grid-template-columns:300px 1fr auto;align-items:center;background:rgba(5,6,7,.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--l)}
+.brand{height:70px;display:flex;align-items:center;gap:14px;padding:0 18px;border-right:1px solid var(--l)}.brand svg{width:45px;height:54px}.brand b{display:block;letter-spacing:.18em;font-size:19px}.brand small{display:block;color:var(--m);font-size:9px;letter-spacing:.14em}.crumb{padding:0 24px;font-size:10px;color:#b7bdc4}.top-status{padding-right:18px;color:var(--m);font-size:10px}
+.shell{display:grid;grid-template-columns:300px 1fr}.side{position:sticky;top:70px;height:calc(100vh - 70px);overflow:auto;border-right:1px solid var(--l);padding:12px 8px;background:#070809}.block{border:1px solid var(--l);border-radius:10px;padding:11px;margin-bottom:9px;background:#080a0c}.bt{color:var(--o);font-size:10px;font-weight:800;letter-spacing:.1em;margin:3px 8px 9px}.nav{display:flex;gap:10px;padding:12px 10px;border-left:3px solid transparent;border-radius:6px;color:#d5d9de;cursor:pointer}.nav.active{color:var(--o);border-left-color:var(--o);background:linear-gradient(90deg,rgba(255,120,0,.17),transparent)}.nav b{font-size:11px}.nav small{display:block;color:var(--m);font-size:9px;margin-top:2px}.nav-ico{width:20px;text-align:center}
+main{min-width:0}.view{padding:26px;max-width:1700px;margin:auto}.hidden{display:none!important}.code{color:var(--o);font-weight:800;letter-spacing:.08em}.title{font-size:50px;letter-spacing:-.04em;margin:7px 0 10px}.lead{color:#b7bdc4;line-height:1.7;max-width:900px}
+.hero{padding:36px;border:1px solid var(--l);border-radius:15px;background:radial-gradient(circle at 83% 12%,rgba(255,120,0,.14),transparent 27%),linear-gradient(180deg,#0c0f12,#080a0c)}
+.btn{border:1px solid var(--o);background:transparent;color:var(--o);padding:11px 14px;border-radius:8px;font-size:10px;font-weight:800;letter-spacing:.05em}.btn.primary{background:var(--o);color:#070809}.btn.ghost{border-color:var(--l);color:#c8cdd3}.btn.danger{border-color:var(--r);color:#ff7777}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.kpi,.card,.plan-card{border:1px solid var(--l);border-radius:11px;background:linear-gradient(180deg,#0d1013,#090b0d);padding:18px}.kpi b{display:block;font-size:32px}.kpi span{font-size:9px;color:var(--m)}.home-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:14px}.today-card{min-height:340px}.today-card h2{font-size:36px;margin:8px 0}.progress{height:9px;background:#20252b;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:var(--o)}.small{font-size:10px;color:var(--m)}.data-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:9px 0;border-bottom:1px solid #20252b;font-size:11px}.data-row span:first-child{color:var(--m)}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.plan-card h3{margin:5px 0}.plan-card p{font-size:10px;color:var(--m);line-height:1.5}.exercise-row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 0;border-bottom:1px solid #20252b;font-size:11px}
+.workout{min-height:calc(100vh - 70px);padding:22px;background:radial-gradient(circle at 50% 0,rgba(255,120,0,.08),transparent 30%)}.workout-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-bottom:14px}.workout-top .right{text-align:right}.workout-grid{display:grid;grid-template-columns:.85fr 1.3fr .8fr;gap:14px}.exercise-stage,.set-panel,.side-panel{border:1px solid var(--l);border-radius:14px;background:linear-gradient(180deg,#0d1013,#080a0c);padding:20px}.exercise-number{font-size:10px;color:var(--m)}.exercise-stage h1{font-size:48px;line-height:.95;margin:8px 0}.exercise-real{font-size:12px;color:#b9bec5;letter-spacing:.1em}.exercise-meta{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.pill{border:1px solid var(--l);border-radius:999px;padding:7px 10px;font-size:9px}.muscle-box{margin-top:18px;padding:14px;border:1px solid var(--l);border-radius:10px}.muscle-box b{color:var(--o);font-size:10px}.muscle-box p{font-size:11px;color:#c3c8ce;line-height:1.6}
+.set-panel{text-align:center}.set-panel h2{font-size:13px;color:var(--m);letter-spacing:.1em}.load-control{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;margin:18px 0}.round{width:42px;height:42px;border-radius:50%;border:1px solid var(--l);background:#0a0d10;color:var(--t)}.big-input{width:100%;background:#080a0c;color:var(--t);border:1px solid var(--l);border-radius:12px;padding:18px;text-align:center;font-size:36px;font-weight:800}.unit{font-size:11px;color:var(--m);margin-top:-10px}.sets-table{width:100%;border-collapse:collapse;margin-top:15px}.sets-table th,.sets-table td{padding:9px;border-bottom:1px solid #20252b;font-size:10px;text-align:center}.sets-table input{width:70px;background:#080a0c;border:1px solid var(--l);color:var(--t);border-radius:6px;padding:7px;text-align:center}.done{color:var(--g);font-weight:800}.timer{font-size:54px;font-weight:800;margin:12px 0}.timer.running{color:var(--o)}.side-panel h3{font-size:11px;color:var(--o);letter-spacing:.08em}.last-history{margin:12px 0}.history-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:8px 0;border-bottom:1px solid #20252b;font-size:10px}.workout-nav{display:flex;justify-content:space-between;gap:10px;margin-top:14px}.complete-screen{text-align:center;padding:60px 20px}.complete-screen h1{font-size:64px;margin:10px 0}.complete-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:950px;margin:24px auto}.complete-kpi{border:1px solid var(--l);border-radius:12px;padding:20px}.complete-kpi b{display:block;font-size:34px}
+.history-list{display:grid;gap:10px}.session-card{border:1px solid var(--l);border-radius:10px;padding:16px;background:#0a0d10}.session-card h3{margin:0 0 8px}.session-card p{margin:4px 0;color:var(--m);font-size:10px}
+@media(max-width:1200px){.workout-grid{grid-template-columns:1fr 1fr}.side-panel{grid-column:1/-1}.program-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){header{grid-template-columns:1fr}.crumb,.top-status{display:none}.shell{grid-template-columns:1fr}.side{display:none}.home-grid,.workout-grid,.program-grid,.kpis,.complete-grid{grid-template-columns:1fr}.view{padding:16px}.workout{padding:12px}.workout-top{grid-template-columns:1fr}.workout-top .right{text-align:left}.exercise-stage h1{font-size:38px}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;div class=&quot;brand&quot;&gt;&lt;svg viewBox=&quot;0 0 80 90&quot;&gt;&lt;path d=&quot;M40 4 72 18v27c0 21-14 35-32 41C22 80 8 66 8 45V18Z&quot; fill=&quot;none&quot; stroke=&quot;#ff7800&quot; stroke-width=&quot;4&quot;/&gt;&lt;path d=&quot;m40 19 13 18-9-1 12 15-16-7-16 7 12-15-9 1Z&quot; fill=&quot;#f3f4f5&quot;/&gt;&lt;path d=&quot;m40 49 15 10-15 11-15-11Z&quot; fill=&quot;#ff7800&quot;/&gt;&lt;/svg&gt;&lt;div&gt;&lt;b&gt;PROJECT SC&lt;/b&gt;&lt;small&gt;PERFORMANCE ENGINEERING OS 3.0&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;crumb&quot;&gt;HOME · WORKOUT MODE · PROGRAMMA · STORICO&lt;/div&gt;&lt;div id=&quot;clock&quot; class=&quot;top-status&quot;&gt;&lt;/div&gt;
+&lt;/header&gt;
+&lt;div class=&quot;shell&quot;&gt;
+&lt;aside class=&quot;side&quot;&gt;
+&lt;div class=&quot;block&quot;&gt;&lt;div class=&quot;bt&quot;&gt;OPERATIVITÀ&lt;/div&gt;
+&lt;div class=&quot;nav active&quot; data-view=&quot;home&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;⌂&lt;/span&gt;&lt;div&gt;&lt;b&gt;HOME&lt;/b&gt;&lt;small&gt;Allenamento di oggi&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;nav&quot; data-view=&quot;workout&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;▶&lt;/span&gt;&lt;div&gt;&lt;b&gt;WORKOUT MODE&lt;/b&gt;&lt;small&gt;Registra la seduta&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;nav&quot; data-view=&quot;program&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;▦&lt;/span&gt;&lt;div&gt;&lt;b&gt;PROGRAMMA&lt;/b&gt;&lt;small&gt;Scegli il piano&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;nav&quot; data-view=&quot;history&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;⌁&lt;/span&gt;&lt;div&gt;&lt;b&gt;STORICO&lt;/b&gt;&lt;small&gt;Sedute completate&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block&quot;&gt;&lt;div class=&quot;bt&quot;&gt;DOCUMENTAZIONE&lt;/div&gt;
+&lt;div class=&quot;nav&quot; onclick=&quot;alert(&#x27;Il Manuale tecnico rimane disponibile nella versione 2.1 stabile.&#x27;)&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;▣&lt;/span&gt;&lt;div&gt;&lt;b&gt;MANUALE&lt;/b&gt;&lt;small&gt;Schede esercizi&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;nav&quot; onclick=&quot;alert(&#x27;L’Atlante anatomico rimane disponibile nella versione 2.1 stabile.&#x27;)&quot;&gt;&lt;span class=&quot;nav-ico&quot;&gt;◈&lt;/span&gt;&lt;div&gt;&lt;b&gt;ATLANTE&lt;/b&gt;&lt;small&gt;Muscoli ed esercizi&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;block&quot;&gt;&lt;div class=&quot;bt&quot;&gt;SESSIONE ATTIVA&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Piano&lt;/span&gt;&lt;b id=&quot;sidePlan&quot;&gt;Nessuno&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Durata&lt;/span&gt;&lt;b id=&quot;sideTime&quot;&gt;00:00&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Serie&lt;/span&gt;&lt;b id=&quot;sideSets&quot;&gt;0&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/aside&gt;
+
+&lt;main&gt;
+&lt;section id=&quot;homeView&quot; class=&quot;view&quot;&gt;
+&lt;div class=&quot;hero&quot;&gt;&lt;div class=&quot;code&quot;&gt;PROJECT SC OS 3.0&lt;/div&gt;&lt;h1 class=&quot;title&quot;&gt;ALLENAMENTO DI OGGI&lt;/h1&gt;&lt;p class=&quot;lead&quot;&gt;La home ora serve a fare qualcosa, non soltanto a contemplare box neri ben allineati.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;home-grid&quot; style=&quot;margin-top:14px&quot;&gt;
+&lt;article class=&quot;card today-card&quot;&gt;&lt;div class=&quot;code&quot;&gt;SESSIONE CONSIGLIATA&lt;/div&gt;&lt;h2 id=&quot;todayPlan&quot;&gt;THE LAB B · PULL CONTROL&lt;/h2&gt;&lt;p id=&quot;todayGoal&quot; class=&quot;lead&quot;&gt;Dorso, bicipiti e controllo scapolare.&lt;/p&gt;&lt;div class=&quot;progress&quot;&gt;&lt;i style=&quot;width:33%&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;p class=&quot;small&quot;&gt;SETTIMANA 2/6 · DURATA STIMATA 95 MIN&lt;/p&gt;&lt;button id=&quot;startToday&quot; class=&quot;btn primary&quot;&gt;▶ INIZIA ALLENAMENTO&lt;/button&gt;&lt;/article&gt;
+&lt;article class=&quot;card&quot;&gt;&lt;div class=&quot;code&quot;&gt;ULTIMA ATTIVITÀ&lt;/div&gt;&lt;div id=&quot;lastSession&quot; style=&quot;margin-top:12px&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Peso attuale&lt;/span&gt;&lt;b&gt;82 kg&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Obiettivo&lt;/span&gt;&lt;b&gt;75 kg&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Target skill&lt;/span&gt;&lt;b&gt;Muscle-Up&lt;/b&gt;&lt;/div&gt;&lt;/article&gt;
+&lt;/div&gt;
+&lt;div class=&quot;kpis&quot;&gt;&lt;div class=&quot;kpi&quot;&gt;&lt;b id=&quot;homeSessions&quot;&gt;0&lt;/b&gt;&lt;span&gt;SEDUTE REGISTRATE&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;kpi&quot;&gt;&lt;b id=&quot;homeSets&quot;&gt;0&lt;/b&gt;&lt;span&gt;SERIE TOTALI&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;kpi&quot;&gt;&lt;b id=&quot;homeVolume&quot;&gt;0&lt;/b&gt;&lt;span&gt;VOLUME REGISTRATO&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;kpi&quot;&gt;&lt;b id=&quot;homePR&quot;&gt;0&lt;/b&gt;&lt;span&gt;RECORD SEGNALATI&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;programView&quot; class=&quot;view hidden&quot;&gt;
+&lt;div class=&quot;code&quot;&gt;SC-PROGRAM&lt;/div&gt;&lt;h1 class=&quot;title&quot;&gt;SCEGLI ALLENAMENTO&lt;/h1&gt;&lt;p class=&quot;lead&quot;&gt;Seleziona il piano e avvia la modalità operativa.&lt;/p&gt;&lt;div id=&quot;programGrid&quot; class=&quot;program-grid&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;workoutView&quot; class=&quot;workout hidden&quot;&gt;
+&lt;div id=&quot;workoutActive&quot;&gt;
+&lt;div class=&quot;workout-top&quot;&gt;&lt;div&gt;&lt;div class=&quot;code&quot; id=&quot;woPlan&quot;&gt;&lt;/div&gt;&lt;div class=&quot;small&quot; id=&quot;woProgress&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;progress&quot; style=&quot;width:280px&quot;&gt;&lt;i id=&quot;woBar&quot; style=&quot;width:0&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;div class=&quot;right&quot;&gt;&lt;button id=&quot;abortWorkout&quot; class=&quot;btn danger&quot;&gt;TERMINA&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;workout-grid&quot;&gt;
+&lt;article class=&quot;exercise-stage&quot;&gt;&lt;div id=&quot;woCount&quot; class=&quot;exercise-number&quot;&gt;&lt;/div&gt;&lt;div id=&quot;woCode&quot; class=&quot;code&quot;&gt;&lt;/div&gt;&lt;h1 id=&quot;woName&quot;&gt;&lt;/h1&gt;&lt;div id=&quot;woReal&quot; class=&quot;exercise-real&quot;&gt;&lt;/div&gt;&lt;div class=&quot;exercise-meta&quot;&gt;&lt;span id=&quot;woCategory&quot; class=&quot;pill&quot;&gt;&lt;/span&gt;&lt;span id=&quot;woZone&quot; class=&quot;pill&quot;&gt;&lt;/span&gt;&lt;span id=&quot;woTarget&quot; class=&quot;pill&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;muscle-box&quot;&gt;&lt;b&gt;MUSCOLI COINVOLTI&lt;/b&gt;&lt;p id=&quot;woMuscles&quot;&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;muscle-box&quot;&gt;&lt;b&gt;SETUP RAPIDO&lt;/b&gt;&lt;p id=&quot;woSetup&quot;&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;button id=&quot;openExerciseDoc&quot; class=&quot;btn&quot; style=&quot;margin-top:14px;width:100%&quot;&gt;▣ APRI SCHEDA TECNICA&lt;/button&gt;
+&lt;/article&gt;
+&lt;article class=&quot;set-panel&quot;&gt;&lt;h2&gt;REGISTRAZIONE SET&lt;/h2&gt;&lt;div class=&quot;load-control&quot;&gt;&lt;button class=&quot;round&quot; id=&quot;loadMinus&quot;&gt;−&lt;/button&gt;&lt;input id=&quot;loadInput&quot; class=&quot;big-input&quot; type=&quot;number&quot; step=&quot;0.5&quot; value=&quot;0&quot;&gt;&lt;button class=&quot;round&quot; id=&quot;loadPlus&quot;&gt;+&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;unit&quot;&gt;KG&lt;/div&gt;&lt;table class=&quot;sets-table&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;SET&lt;/th&gt;&lt;th&gt;REPS&lt;/th&gt;&lt;th&gt;RPE&lt;/th&gt;&lt;th&gt;STATO&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;setsBody&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;button id=&quot;saveCurrentSet&quot; class=&quot;btn primary&quot; style=&quot;margin-top:14px&quot;&gt;SALVA SET&lt;/button&gt;&lt;/article&gt;
+&lt;aside class=&quot;side-panel&quot;&gt;&lt;h3&gt;RECUPERO&lt;/h3&gt;&lt;div id=&quot;timer&quot; class=&quot;timer&quot;&gt;01:30&lt;/div&gt;&lt;button id=&quot;timerToggle&quot; class=&quot;btn&quot;&gt;AVVIA / PAUSA&lt;/button&gt;&lt;button id=&quot;timerReset&quot; class=&quot;btn ghost&quot;&gt;RESET&lt;/button&gt;&lt;h3 style=&quot;margin-top:22px&quot;&gt;ULTIMA SEDUTA&lt;/h3&gt;&lt;div id=&quot;lastExerciseHistory&quot; class=&quot;last-history&quot;&gt;&lt;/div&gt;&lt;h3&gt;NOTE&lt;/h3&gt;&lt;textarea id=&quot;exerciseNote&quot; style=&quot;width:100%;min-height:80px;background:#080a0c;color:var(--t);border:1px solid var(--l);border-radius:8px;padding:10px&quot;&gt;&lt;/textarea&gt;&lt;/aside&gt;
+&lt;/div&gt;
+&lt;div class=&quot;workout-nav&quot;&gt;&lt;button id=&quot;prevExercise&quot; class=&quot;btn ghost&quot;&gt;← PRECEDENTE&lt;/button&gt;&lt;button id=&quot;nextExercise&quot; class=&quot;btn&quot;&gt;ESERCIZIO SUCCESSIVO →&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;workoutComplete&quot; class=&quot;complete-screen hidden&quot;&gt;&lt;div class=&quot;code&quot;&gt;SESSIONE SALVATA&lt;/div&gt;&lt;h1&gt;ALLENAMENTO COMPLETATO&lt;/h1&gt;&lt;div id=&quot;completeGrid&quot; class=&quot;complete-grid&quot;&gt;&lt;/div&gt;&lt;button id=&quot;backHome&quot; class=&quot;btn primary&quot;&gt;TORNA ALLA HOME&lt;/button&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;historyView&quot; class=&quot;view hidden&quot;&gt;&lt;div class=&quot;code&quot;&gt;SC-HISTORY&lt;/div&gt;&lt;h1 class=&quot;title&quot;&gt;STORICO ALLENAMENTI&lt;/h1&gt;&lt;div id=&quot;historyList&quot; class=&quot;history-list&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;/main&gt;&lt;/div&gt;
+
+&lt;script&gt;
+const E=[[&quot;SC-001&quot;, &quot;THE LAB&quot;, &quot;THE COBRA&quot;, &quot;Vertical Traction&quot;, &quot;Fondatore&quot;, 98, &quot;Gran dorsale, grande rotondo, bicipite&quot;, &quot;Forza di tirata verticale e trasferimento alle trazioni.&quot;, &quot;Presa neutra; sterno alto; scapole depresse; bacino stabile.&quot;, &quot;Slancio; spalle alte; tirata dominata dai bicipiti.&quot;, &quot;https://musclewiki.com/exercise/neutral-pulldown&quot;], [&quot;SC-002&quot;, &quot;THE LAB&quot;, &quot;THE BUILDER&quot;, &quot;Chest Press&quot;, &quot;Fondatore&quot;, 95, &quot;Pettorale, tricipite, deltoide anteriore&quot;, &quot;Massa e forza di spinta sul petto.&quot;, &quot;Maniglie al centro petto; scapole addotte; piedi saldi.&quot;, &quot;Spalle avanti; sedile errato; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/machine-chest-press&quot;], [&quot;SC-003&quot;, &quot;THE LAB&quot;, &quot;THE CANNON&quot;, &quot;Shoulder Press&quot;, &quot;Fondatore&quot;, 93, &quot;Deltoidi, tricipiti&quot;, &quot;Spalle piene e forza verticale.&quot;, &quot;Schiena aderente; presa neutra; avambracci verticali.&quot;, &quot;Iperestensione lombare; ROM forzato.&quot;, &quot;https://musclewiki.com/exercise/machine-neutral-overhead-press&quot;], [&quot;SC-004&quot;, &quot;THE LAB&quot;, &quot;THE WING&quot;, &quot;Lat Machine&quot;, &quot;Fondatore&quot;, 94, &quot;Dorsali, bicipiti&quot;, &quot;Ampiezza dorsale e controllo della tirata.&quot;, &quot;Rullo cosce aderente; torace alto.&quot;, &quot;Dietro nuca; troppo slancio; ROM corto.&quot;, &quot;https://musclewiki.com/exercise/neutral-pulldown&quot;], [&quot;SC-006&quot;, &quot;THE LAB&quot;, &quot;THE SQUEEZE&quot;, &quot;Pec Deck&quot;, &quot;Costruttore&quot;, 90, &quot;Pettorale, deltoide anteriore&quot;, &quot;Tensione continua e volume sul petto.&quot;, &quot;Gomiti al centro petto; scapole ferme.&quot;, &quot;Spalle avanti; troppo allungamento.&quot;, &quot;https://musclewiki.com/exercise/machine-pec-fly&quot;], [&quot;SC-007&quot;, &quot;THE LAB&quot;, &quot;THE CROSSLINE&quot;, &quot;Cable Fly&quot;, &quot;Costruttore&quot;, 88, &quot;Pettorale, stabilizzatori scapolari&quot;, &quot;Traiettoria personalizzabile per il petto.&quot;, &quot;Un passo avanti; gomiti semiflessi.&quot;, &quot;Movimento da pressa; instabilità.&quot;, &quot;https://musclewiki.com/exercise/cable-pec-fly&quot;], [&quot;SC-009&quot;, &quot;THE LAB&quot;, &quot;THE QUAD DRIVE&quot;, &quot;Leg Extension&quot;, &quot;Complementare&quot;, 84, &quot;Quadricipiti&quot;, &quot;Lavoro diretto sul quadricipite.&quot;, &quot;Ginocchio sul perno; schiena aderente.&quot;, &quot;Slancio; perno errato; ROM ridotto.&quot;, &quot;https://musclewiki.com/exercise/machine-leg-extension&quot;], [&quot;SC-011&quot;, &quot;THE LAB&quot;, &quot;THE REAR GUARD&quot;, &quot;Reverse Pec Deck&quot;, &quot;Rifinitore&quot;, 89, &quot;Deltoide posteriore, romboidi&quot;, &quot;Bilanciare il volume di spinta.&quot;, &quot;Petto aderente; collo neutro.&quot;, &quot;Trapezio dominante; colpo di busto.&quot;, &quot;https://musclewiki.com/exercise/machine-reverse-fly&quot;], [&quot;SC-012&quot;, &quot;THE LAB&quot;, &quot;THE CABLE CORE&quot;, &quot;Pallof Press&quot;, &quot;Terapeutico&quot;, 86, &quot;Obliqui, trasverso, core&quot;, &quot;Anti-rotazione e controllo del tronco.&quot;, &quot;Costole controllate; bacino neutro.&quot;, &quot;Ruotare col cavo; carico eccessivo.&quot;, &quot;https://musclewiki.com/exercise/cable-pallof-press&quot;], [&quot;SC-013&quot;, &quot;THE LAB&quot;, &quot;THE LEG CURL&quot;, &quot;Leg Curl&quot;, &quot;Complementare&quot;, 85, &quot;Femorali&quot;, &quot;Sviluppare i femorali con controllo.&quot;, &quot;Ginocchio sul perno; bacino fermo.&quot;, &quot;Sollevare il bacino; corsa breve.&quot;, &quot;https://musclewiki.com/exercise/machine-seated-leg-curl&quot;], [&quot;SC-014&quot;, &quot;THE LAB&quot;, &quot;THE HIP LINE&quot;, &quot;Hip Abductor&quot;, &quot;Complementare&quot;, 78, &quot;Gluteo medio&quot;, &quot;Stabilità del bacino.&quot;, &quot;Schiena stabile; movimento controllato.&quot;, &quot;Slancio; ROM forzato.&quot;, &quot;https://musclewiki.com/exercise/machine-hip-abduction&quot;], [&quot;SC-015&quot;, &quot;THE LAB&quot;, &quot;THE CRUNCH CORE&quot;, &quot;Crunch Machine&quot;, &quot;Rifinitore&quot;, 79, &quot;Retto addominale&quot;, &quot;Flessione controllata del tronco.&quot;, &quot;Bacino fermo; espirazione attiva.&quot;, &quot;Tirare con le braccia; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/machine-crunch&quot;], [&quot;SC-005&quot;, &quot;THE FORGE&quot;, &quot;THE ANCHOR&quot;, &quot;Chest Supported Row&quot;, &quot;Fondatore&quot;, 96, &quot;Romboidi, trapezio medio, dorsali&quot;, &quot;Spessore dorsale senza slancio.&quot;, &quot;Petto sul supporto; collo neutro.&quot;, &quot;Staccare il petto; eccentrica corta.&quot;, &quot;https://musclewiki.com/exercise/machine-rear-deltoid-row&quot;], [&quot;SC-008&quot;, &quot;THE FORGE&quot;, &quot;THE PREACHER&quot;, &quot;EZ Preacher Curl&quot;, &quot;Costruttore&quot;, 91, &quot;Bicipite, brachiale&quot;, &quot;Bicipiti senza slancio.&quot;, &quot;Braccia sul supporto; polsi neutri.&quot;, &quot;Gomiti che si staccano; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/ez-bar-preacher-curl&quot;], [&quot;SC-010&quot;, &quot;THE FORGE&quot;, &quot;THE PRESS PLATFORM&quot;, &quot;Leg Press&quot;, &quot;Complementare&quot;, 87, &quot;Quadricipiti, glutei, femorali&quot;, &quot;Forza e massa degli arti inferiori.&quot;, &quot;Piedi larghezza spalle; bacino aderente.&quot;, &quot;Retroversione; ginocchia interne.&quot;, &quot;https://musclewiki.com/exercise/machine-leg-press&quot;], [&quot;SC-016&quot;, &quot;THE FORGE&quot;, &quot;THE INCLINE BUILDER&quot;, &quot;Incline Dumbbell Press&quot;, &quot;Fondatore&quot;, 97, &quot;Pettorale alto, deltoide anteriore&quot;, &quot;Upper Chest Shelf.&quot;, &quot;Panca 20–30°; scapole addotte.&quot;, &quot;Panca troppo verticale; gomiti larghi.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-incline-bench-press&quot;], [&quot;SC-017&quot;, &quot;THE FORGE&quot;, &quot;THE FLAT FORGE&quot;, &quot;Dumbbell Bench Press&quot;, &quot;Costruttore&quot;, 92, &quot;Pettorale, tricipiti&quot;, &quot;Spinta libera con ampia escursione.&quot;, &quot;Scapole stabili; piedi a terra.&quot;, &quot;Spalle avanti; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-bench-press&quot;], [&quot;SC-018&quot;, &quot;THE FORGE&quot;, &quot;THE SPIDER&quot;, &quot;Spider Curl EZ&quot;, &quot;Fondatore&quot;, 95, &quot;Bicipite, brachiale&quot;, &quot;Bicipiti in posizione stabile.&quot;, &quot;Petto sulla panca; gomiti fermi.&quot;, &quot;Oscillazione; spalle avanti.&quot;, &quot;https://musclewiki.com/exercise/barbell-spider-curl&quot;], [&quot;SC-019&quot;, &quot;THE FORGE&quot;, &quot;THE ROPE EXTENSION&quot;, &quot;Overhead Rope Extension&quot;, &quot;Fondatore&quot;, 94, &quot;Tricipite, capo lungo&quot;, &quot;Massa del tricipite.&quot;, &quot;Cavo alto; busto stabile; gomiti stretti.&quot;, &quot;Gomiti aperti; schiena estesa.&quot;, &quot;https://musclewiki.com/exercise/cable-overhead-tricep-extension&quot;], [&quot;SC-020&quot;, &quot;THE FORGE&quot;, &quot;THE LATERAL CAP&quot;, &quot;Dumbbell Lateral Raise&quot;, &quot;Fondatore&quot;, 96, &quot;Deltoide laterale&quot;, &quot;Costruire larghezza delle spalle.&quot;, &quot;Manubri leggeri; gomiti morbidi.&quot;, &quot;Slancio; trapezio dominante.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-lateral-raise&quot;], [&quot;SC-021&quot;, &quot;THE FORGE&quot;, &quot;THE HAMMER&quot;, &quot;Hammer Curl&quot;, &quot;Costruttore&quot;, 89, &quot;Brachiale, brachioradiale&quot;, &quot;Spessore del braccio e avambracci.&quot;, &quot;Presa neutra; gomiti ai fianchi.&quot;, &quot;Oscillare; flettere il polso.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-hammer-curl&quot;], [&quot;SC-022&quot;, &quot;THE FORGE&quot;, &quot;THE FOREARM GRIP&quot;, &quot;Wrist Curl / Reverse Curl&quot;, &quot;Rifinitore&quot;, 82, &quot;Avambracci&quot;, &quot;Popeye forearms e grip.&quot;, &quot;Avambracci supportati; ROM controllato.&quot;, &quot;Rimbalzo; polso deviato.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-wrist-curl&quot;], [&quot;SC-023&quot;, &quot;THE FORGE&quot;, &quot;THE ROW ENGINE&quot;, &quot;One Arm Dumbbell Row&quot;, &quot;Costruttore&quot;, 90, &quot;Dorsali, romboidi, bicipite&quot;, &quot;Tirata libera e simmetria.&quot;, &quot;Bacino neutro; gomito verso il fianco.&quot;, &quot;Rotazione del busto; corsa breve.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-row&quot;], [&quot;SC-024&quot;, &quot;THE FORGE&quot;, &quot;THE CALF DRIVE&quot;, &quot;Standing Calf Raise&quot;, &quot;Complementare&quot;, 80, &quot;Polpacci&quot;, &quot;Polpaccio e stabilità caviglia.&quot;, &quot;Avampiede stabile; tallone libero.&quot;, &quot;Rimbalzo; ROM corto.&quot;, &quot;https://musclewiki.com/exercise/machine-standing-calf-raise&quot;], [&quot;SC-A01&quot;, &quot;THE ARENA&quot;, &quot;THE PULL-UP&quot;, &quot;Pull-Up&quot;, &quot;Skill Fondatrice&quot;, 100, &quot;Dorsali, bicipiti, core, grip&quot;, &quot;Obiettivo: tirare il proprio corpo.&quot;, &quot;Presa prona; scapole attive.&quot;, &quot;Kipping; mezzo ROM.&quot;, &quot;https://musclewiki.com/exercise/pull-ups&quot;], [&quot;SC-A02&quot;, &quot;THE ARENA&quot;, &quot;THE CHIN-UP&quot;, &quot;Chin-Up&quot;, &quot;Skill&quot;, 95, &quot;Dorsali, bicipiti&quot;, &quot;Volume di trazione con bicipite.&quot;, &quot;Presa supina; torace alto.&quot;, &quot;Dondolio; spalle passive.&quot;, &quot;https://musclewiki.com/exercise/chin-ups&quot;], [&quot;SC-A03&quot;, &quot;THE ARENA&quot;, &quot;THE NEUTRAL PULL&quot;, &quot;Neutral Pull-Up&quot;, &quot;Skill&quot;, 96, &quot;Dorsali, brachiale&quot;, &quot;Trazione verticale tollerabile.&quot;, &quot;Presa neutra; core attivo.&quot;, &quot;Scapole passive; slancio.&quot;, &quot;https://musclewiki.com/exercise/neutral-grip-pull-ups&quot;], [&quot;SC-A04&quot;, &quot;THE ARENA&quot;, &quot;THE AUSTRALIAN&quot;, &quot;Inverted Row&quot;, &quot;Progressione&quot;, 91, &quot;Dorsali, romboidi&quot;, &quot;Base della tirata orizzontale.&quot;, &quot;Corpo in linea; sbarra al petto.&quot;, &quot;Bacino basso; collo avanti.&quot;, &quot;https://musclewiki.com/exercise/inverted-row&quot;], [&quot;SC-A05&quot;, &quot;THE ARENA&quot;, &quot;THE DIP&quot;, &quot;Parallel Bar Dip&quot;, &quot;Skill Fondatrice&quot;, 94, &quot;Pettorale, tricipiti&quot;, &quot;Forza di spinta e base muscle-up.&quot;, &quot;Scapole depresse; busto stabile.&quot;, &quot;Spalle avanti; profondità forzata.&quot;, &quot;https://musclewiki.com/exercise/dips&quot;], [&quot;SC-A06&quot;, &quot;THE ARENA&quot;, &quot;THE HANG&quot;, &quot;Dead / Active Hang&quot;, &quot;Prerequisito&quot;, 92, &quot;Grip, dorsali&quot;, &quot;Grip e controllo scapolare.&quot;, &quot;Presa salda; corpo fermo.&quot;, &quot;Dolore ignorato; dondolio.&quot;, &quot;https://musclewiki.com/exercise/dead-hang&quot;], [&quot;SC-A07&quot;, &quot;THE ARENA&quot;, &quot;THE SCAP PULL&quot;, &quot;Scapular Pull-Up&quot;, &quot;Prerequisito&quot;, 95, &quot;Trapezio basso, dorsali&quot;, &quot;Avvio corretto della trazione.&quot;, &quot;Gomiti estesi; scapole depresse.&quot;, &quot;Piegare i gomiti; slancio.&quot;, &quot;https://musclewiki.com/exercise/scapular-pull-ups&quot;], [&quot;SC-A08&quot;, &quot;THE ARENA&quot;, &quot;THE KNEE RAISE&quot;, &quot;Hanging Knee Raise&quot;, &quot;Costruttore&quot;, 88, &quot;Addominali, grip&quot;, &quot;Core sospeso e controllo bacino.&quot;, &quot;Hang attivo; retroversione.&quot;, &quot;Dondolio; spalle passive.&quot;, &quot;https://musclewiki.com/exercise/hanging-knee-raises&quot;], [&quot;SC-A09&quot;, &quot;THE ARENA&quot;, &quot;THE LEG RAISE&quot;, &quot;Hanging Leg Raise&quot;, &quot;Skill&quot;, 92, &quot;Addominali, grip&quot;, &quot;Core avanzato e toes-to-bar.&quot;, &quot;Bacino in retroversione.&quot;, &quot;Slancio; lombare estesa.&quot;, &quot;https://musclewiki.com/exercise/hanging-leg-raises&quot;], [&quot;SC-A10&quot;, &quot;THE ARENA&quot;, &quot;THE TOES TO BAR&quot;, &quot;Toes-to-Bar&quot;, &quot;Skill Avanzata&quot;, 95, &quot;Core, dorsali, grip&quot;, &quot;Controllo globale sospeso.&quot;, &quot;Prerequisito: leg raise pulito.&quot;, &quot;Kipping incontrollato.&quot;, &quot;https://musclewiki.com/exercise/toes-to-bar&quot;], [&quot;SC-A11&quot;, &quot;THE ARENA&quot;, &quot;THE CHEST TO BAR&quot;, &quot;Chest-to-Bar Pull-Up&quot;, &quot;Skill Avanzata&quot;, 99, &quot;Dorsali, bicipiti&quot;, &quot;Passaggio verso muscle-up.&quot;, &quot;Trazione esplosiva; sterno alla sbarra.&quot;, &quot;Solo mento sopra sbarra.&quot;, &quot;https://musclewiki.com/exercise/chest-to-bar-pull-up&quot;], [&quot;SC-A12&quot;, &quot;THE ARENA&quot;, &quot;THE MUSCLE-UP&quot;, &quot;Bar Muscle-Up&quot;, &quot;Obiettivo Master&quot;, 100, &quot;Full body&quot;, &quot;Obiettivo finale Strength Transfer.&quot;, &quot;10+ pull-up, chest-to-bar e dip solidi.&quot;, &quot;Tentarlo senza prerequisiti.&quot;, &quot;https://musclewiki.com/exercise/muscle-up&quot;], [&quot;SC-A13&quot;, &quot;THE ARENA&quot;, &quot;THE L-SIT&quot;, &quot;L-Sit&quot;, &quot;Skill&quot;, 90, &quot;Core, flessori anca&quot;, &quot;Compressione e controllo.&quot;, &quot;Spalle depresse; gomiti estesi.&quot;, &quot;Spalle alte; gambe molli.&quot;, &quot;https://musclewiki.com/exercise/bodyweight-hanging-l-sit&quot;], [&quot;SC-A14&quot;, &quot;THE ARENA&quot;, &quot;THE FRONT LEVER PATH&quot;, &quot;Front Lever Progression&quot;, &quot;Skill Avanzata&quot;, 96, &quot;Dorsali, core&quot;, &quot;Forza isometrica avanzata.&quot;, &quot;Progressioni tuck; scapole depresse.&quot;, &quot;Braccia piegate; progressione eccessiva.&quot;, &quot;https://musclewiki.com/exercise/front-lever&quot;]], P={&quot;THE LAB&quot;: [[&quot;LAB A · PUSH PRECISION&quot;, &quot;Petto alto, spalle e tricipiti&quot;, [[&quot;SC-016&quot;, &quot;4×6–10&quot;], [&quot;SC-002&quot;, &quot;3×8–12&quot;], [&quot;SC-003&quot;, &quot;3×8–12&quot;], [&quot;SC-006&quot;, &quot;3×12–15&quot;], [&quot;SC-020&quot;, &quot;4×12–20&quot;], [&quot;SC-019&quot;, &quot;3×10–15&quot;], [&quot;SC-012&quot;, &quot;3×10/lato&quot;]]], [&quot;LAB B · PULL CONTROL&quot;, &quot;Dorso, bicipiti e controllo scapolare&quot;, [[&quot;SC-001&quot;, &quot;4×6–10&quot;], [&quot;SC-004&quot;, &quot;3×8–12&quot;], [&quot;SC-005&quot;, &quot;4×8–12&quot;], [&quot;SC-011&quot;, &quot;3×12–20&quot;], [&quot;SC-018&quot;, &quot;3×8–12&quot;], [&quot;SC-021&quot;, &quot;3×10–14&quot;]]], [&quot;LAB C · LOWER &amp; CORE&quot;, &quot;Gambe efficienti e core stabile&quot;, [[&quot;SC-010&quot;, &quot;4×8–12&quot;], [&quot;SC-009&quot;, &quot;3×10–15&quot;], [&quot;SC-013&quot;, &quot;3×10–15&quot;], [&quot;SC-014&quot;, &quot;3×15–20&quot;], [&quot;SC-024&quot;, &quot;4×10–15&quot;], [&quot;SC-015&quot;, &quot;3×12–15&quot;]]]], &quot;THE FORGE&quot;: [[&quot;FORGE A · UPPER CHEST&quot;, &quot;Upper Chest Shelf e forza di spinta&quot;, [[&quot;SC-016&quot;, &quot;5×5–8&quot;], [&quot;SC-017&quot;, &quot;3×8–10&quot;], [&quot;SC-002&quot;, &quot;3×8–12&quot;], [&quot;SC-007&quot;, &quot;3×12–15&quot;], [&quot;SC-020&quot;, &quot;4×12–20&quot;], [&quot;SC-019&quot;, &quot;4×8–12&quot;]]], [&quot;FORGE B · COBRA BACK&quot;, &quot;Ampiezza, spessore e braccia&quot;, [[&quot;SC-001&quot;, &quot;4×6–10&quot;], [&quot;SC-005&quot;, &quot;4×6–10&quot;], [&quot;SC-023&quot;, &quot;3×8–12/lato&quot;], [&quot;SC-011&quot;, &quot;3×15–20&quot;], [&quot;SC-018&quot;, &quot;4×8–12&quot;], [&quot;SC-021&quot;, &quot;3×10–14&quot;], [&quot;SC-022&quot;, &quot;3×12–20&quot;]]], [&quot;FORGE C · FOUNDATION&quot;, &quot;Gambe e capacità strutturale&quot;, [[&quot;SC-010&quot;, &quot;5×8–12&quot;], [&quot;SC-009&quot;, &quot;3×10–15&quot;], [&quot;SC-013&quot;, &quot;4×10–15&quot;], [&quot;SC-014&quot;, &quot;3×15–20&quot;], [&quot;SC-024&quot;, &quot;4×10–15&quot;], [&quot;SC-012&quot;, &quot;3×10/lato&quot;]]]], &quot;THE ARENA&quot;: [[&quot;ARENA 1 · PULL-UP FOUNDATION&quot;, &quot;Da hang attivo a 10 trazioni&quot;, [[&quot;SC-A06&quot;, &quot;3×20–40s&quot;], [&quot;SC-A07&quot;, &quot;4×6–10&quot;], [&quot;SC-A04&quot;, &quot;4×8–15&quot;], [&quot;SC-A03&quot;, &quot;5 serie tecniche&quot;], [&quot;SC-A01&quot;, &quot;serie submassimali&quot;], [&quot;SC-A08&quot;, &quot;3×8–15&quot;]]], [&quot;ARENA 2 · CHEST-TO-BAR PATH&quot;, &quot;Trazione esplosiva e altezza&quot;, [[&quot;SC-A07&quot;, &quot;3×8&quot;], [&quot;SC-A01&quot;, &quot;4×5–8&quot;], [&quot;SC-A11&quot;, &quot;6×2–4&quot;], [&quot;SC-A05&quot;, &quot;4×6–10&quot;], [&quot;SC-A09&quot;, &quot;3×6–12&quot;], [&quot;SC-A06&quot;, &quot;2×max tecnico&quot;]]], [&quot;ARENA 3 · MUSCLE-UP PREP&quot;, &quot;Prerequisiti e transizione&quot;, [[&quot;SC-A11&quot;, &quot;5×3–5&quot;], [&quot;SC-A05&quot;, &quot;5×5–8&quot;], [&quot;SC-A12&quot;, &quot;drill assistiti 6×2–3&quot;], [&quot;SC-A10&quot;, &quot;4×6–10&quot;], [&quot;SC-A13&quot;, &quot;5×10–20s&quot;], [&quot;SC-A06&quot;, &quot;grip 3×max&quot;]]], [&quot;ARENA 4 · SKILL CONTROL&quot;, &quot;Core e leve&quot;, [[&quot;SC-A08&quot;, &quot;3×10–15&quot;], [&quot;SC-A09&quot;, &quot;4×6–12&quot;], [&quot;SC-A10&quot;, &quot;4×5–8&quot;], [&quot;SC-A13&quot;, &quot;5×10–20s&quot;], [&quot;SC-A14&quot;, &quot;6×8–15s&quot;], [&quot;SC-A06&quot;, &quot;2×30–45s&quot;]]]]}, W={&quot;THE LAB B · PULL CONTROL&quot;: [[&quot;SC-001&quot;, 4, &quot;6-10&quot;, 90], [&quot;SC-004&quot;, 3, &quot;8-12&quot;, 90], [&quot;SC-005&quot;, 4, &quot;8-12&quot;, 105], [&quot;SC-011&quot;, 3, &quot;12-20&quot;, 75], [&quot;SC-018&quot;, 3, &quot;8-12&quot;, 75], [&quot;SC-021&quot;, 3, &quot;10-14&quot;, 75]], &quot;THE LAB A · PUSH PRECISION&quot;: [[&quot;SC-016&quot;, 4, &quot;6-10&quot;, 105], [&quot;SC-002&quot;, 3, &quot;8-12&quot;, 90], [&quot;SC-003&quot;, 3, &quot;8-12&quot;, 90], [&quot;SC-006&quot;, 3, &quot;12-15&quot;, 75], [&quot;SC-020&quot;, 4, &quot;12-20&quot;, 60], [&quot;SC-019&quot;, 3, &quot;10-15&quot;, 75]], &quot;THE FORGE A · UPPER CHEST&quot;: [[&quot;SC-016&quot;, 5, &quot;5-8&quot;, 120], [&quot;SC-017&quot;, 3, &quot;8-10&quot;, 105], [&quot;SC-002&quot;, 3, &quot;8-12&quot;, 90], [&quot;SC-007&quot;, 3, &quot;12-15&quot;, 75], [&quot;SC-020&quot;, 4, &quot;12-20&quot;, 60], [&quot;SC-019&quot;, 4, &quot;8-12&quot;, 75]], &quot;THE ARENA 1 · PULL-UP FOUNDATION&quot;: [[&quot;SC-A06&quot;, 3, &quot;20-40 sec&quot;, 60], [&quot;SC-A07&quot;, 4, &quot;6-10&quot;, 60], [&quot;SC-A04&quot;, 4, &quot;8-15&quot;, 75], [&quot;SC-A03&quot;, 5, &quot;tecniche&quot;, 90], [&quot;SC-A01&quot;, 4, &quot;submassimali&quot;, 120], [&quot;SC-A08&quot;, 3, &quot;8-15&quot;, 75]]};
+const $=s=&gt;document.querySelector(s);
+const state={plan:&quot;THE LAB B · PULL CONTROL&quot;,index:0,setIndex:0,start:null,elapsed:0,timer:null,rest:90,restLeft:90,restRun:false,session:[]};
+
+function ex(id){return E.find(x=&gt;x[0]===id)}
+function fmtTime(sec){sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,&quot;0&quot;)+&quot;:&quot;+String(sec%60).padStart(2,&quot;0&quot;)}
+function sessions(){return JSON.parse(localStorage.getItem(&quot;sc-v3-sessions&quot;)||&quot;[]&quot;)}
+function saveSessions(a){localStorage.setItem(&quot;sc-v3-sessions&quot;,JSON.stringify(a))}
+function switchView(v){[&quot;home&quot;,&quot;program&quot;,&quot;workout&quot;,&quot;history&quot;].forEach(x=&gt;$(&quot;#&quot;+x+&quot;View&quot;).classList.toggle(&quot;hidden&quot;,x!==v));document.querySelectorAll(&quot;.nav[data-view]&quot;).forEach(n=&gt;n.classList.toggle(&quot;active&quot;,n.dataset.view===v));if(v===&quot;home&quot;)renderHome();if(v===&quot;program&quot;)renderProgram();if(v===&quot;history&quot;)renderHistory()}
+function renderHome(){
+ const s=sessions(), last=s[s.length-1];
+ $(&quot;#homeSessions&quot;).textContent=s.length;
+ $(&quot;#homeSets&quot;).textContent=s.reduce((a,x)=&gt;a+x.totalSets,0);
+ $(&quot;#homeVolume&quot;).textContent=Math.round(s.reduce((a,x)=&gt;a+x.volume,0)).toLocaleString(&quot;it-IT&quot;)+&quot; kg&quot;;
+ $(&quot;#homePR&quot;).textContent=s.reduce((a,x)=&gt;a+(x.pr||0),0);
+ $(&quot;#lastSession&quot;).innerHTML=last?`&lt;h3&gt;${last.plan}&lt;/h3&gt;&lt;p class=&quot;small&quot;&gt;${last.date} · ${last.duration} · ${last.totalSets} serie&lt;/p&gt;`:`&lt;p class=&quot;small&quot;&gt;Nessuna seduta ancora registrata.&lt;/p&gt;`;
+}
+function renderProgram(){
+ $(&quot;#programGrid&quot;).innerHTML=Object.entries(W).map(([name,items])=&gt;`&lt;article class=&quot;plan-card&quot;&gt;&lt;div class=&quot;code&quot;&gt;${name.split(&quot; · &quot;)[0]}&lt;/div&gt;&lt;h3&gt;${name.split(&quot; · &quot;)[1]||name}&lt;/h3&gt;&lt;p&gt;${items.length} esercizi · modalità guidata con timer e storico.&lt;/p&gt;${items.slice(0,5).map(i=&gt;{let e=ex(i[0]);return `&lt;div class=&quot;exercise-row&quot;&gt;&lt;span&gt;${e?e[2]:i[0]}&lt;/span&gt;&lt;span&gt;${i[1]}×${i[2]}&lt;/span&gt;&lt;/div&gt;`}).join(&quot;&quot;)}&lt;button class=&quot;btn primary start-plan&quot; data-plan=&quot;${name}&quot; style=&quot;margin-top:12px&quot;&gt;INIZIA&lt;/button&gt;&lt;/article&gt;`).join(&quot;&quot;);
+ document.querySelectorAll(&quot;.start-plan&quot;).forEach(b=&gt;b.onclick=()=&gt;startWorkout(b.dataset.plan));
+}
+function startWorkout(plan){
+ state.plan=plan;state.index=0;state.setIndex=0;state.start=Date.now();state.session=[];state.elapsed=0;
+ $(&quot;#sidePlan&quot;).textContent=plan.split(&quot; · &quot;)[0];switchView(&quot;workout&quot;);renderExercise();startElapsedClock();
+}
+function startElapsedClock(){
+ clearInterval(state.timer);
+ state.timer=setInterval(()=&gt;{state.elapsed=Math.floor((Date.now()-state.start)/1000);$(&quot;#sideTime&quot;).textContent=fmtTime(state.elapsed)},1000);
+}
+function currentDef(){return W[state.plan][state.index]}
+function renderExercise(){
+ const d=currentDef(), e=ex(d[0]); if(!e)return;
+ state.setIndex=0;state.rest=d[3];state.restLeft=d[3];state.restRun=false;
+ $(&quot;#woPlan&quot;).textContent=state.plan;$(&quot;#woProgress&quot;).textContent=`ESERCIZIO ${state.index+1} DI ${W[state.plan].length}`;
+ $(&quot;#woBar&quot;).style.width=((state.index)/W[state.plan].length*100)+&quot;%&quot;;
+ $(&quot;#woCount&quot;).textContent=`${state.index+1} / ${W[state.plan].length}`;$(&quot;#woCode&quot;).textContent=e[0];$(&quot;#woName&quot;).textContent=e[2];$(&quot;#woReal&quot;).textContent=e[3];
+ $(&quot;#woCategory&quot;).textContent=e[4];$(&quot;#woZone&quot;).textContent=e[1];$(&quot;#woTarget&quot;).textContent=`${d[1]} × ${d[2]}`;$(&quot;#woMuscles&quot;).textContent=e[6];$(&quot;#woSetup&quot;).textContent=e[8];
+ const prev=getLastExercise(e[0]);$(&quot;#loadInput&quot;).value=prev?.load||0;$(&quot;#exerciseNote&quot;).value=&quot;&quot;;
+ $(&quot;#setsBody&quot;).innerHTML=Array.from({length:d[1]},(_,i)=&gt;`&lt;tr&gt;&lt;td&gt;${i+1}&lt;/td&gt;&lt;td&gt;&lt;input class=&quot;repInput&quot; data-i=&quot;${i}&quot; type=&quot;number&quot; min=&quot;0&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;input class=&quot;rpeInput&quot; data-i=&quot;${i}&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;.5&quot;&gt;&lt;/td&gt;&lt;td id=&quot;setStatus${i}&quot;&gt;—&lt;/td&gt;&lt;/tr&gt;`).join(&quot;&quot;);
+ $(&quot;#lastExerciseHistory&quot;).innerHTML=prev?`&lt;div class=&quot;history-row&quot;&gt;&lt;span&gt;Carico&lt;/span&gt;&lt;b&gt;${prev.load} kg&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;history-row&quot;&gt;&lt;span&gt;Serie&lt;/span&gt;&lt;b&gt;${prev.reps.join(&quot; · &quot;)}&lt;/b&gt;&lt;/div&gt;`:`&lt;p class=&quot;small&quot;&gt;Nessun dato precedente.&lt;/p&gt;`;
+ updateTimer();
+}
+function getLastExercise(id){
+ const s=sessions().slice().reverse();for(const session of s){const f=session.exercises?.find(x=&gt;x.id===id);if(f)return f}return null;
+}
+function saveSet(){
+ const row=state.setIndex;if(row&gt;=currentDef()[1])return;
+ const reps=Number(document.querySelector(`.repInput[data-i=&quot;${row}&quot;]`).value||0);
+ const rpe=Number(document.querySelector(`.rpeInput[data-i=&quot;${row}&quot;]`).value||0);
+ if(!reps){alert(&quot;Inserisci le ripetizioni del set.&quot;);return}
+ let rec=state.session.find(x=&gt;x.id===currentDef()[0]);if(!rec){rec={id:currentDef()[0],load:Number($(&quot;#loadInput&quot;).value||0),reps:[],rpe:[],note:&quot;&quot;};state.session.push(rec)}
+ rec.load=Number($(&quot;#loadInput&quot;).value||0);rec.reps[row]=reps;rec.rpe[row]=rpe;rec.note=$(&quot;#exerciseNote&quot;).value;
+ $(&quot;#setStatus&quot;+row).textContent=&quot;SALVATO&quot;;$(&quot;#setStatus&quot;+row).className=&quot;done&quot;;state.setIndex++;
+ $(&quot;#sideSets&quot;).textContent=state.session.reduce((a,x)=&gt;a+x.reps.filter(Boolean).length,0);
+ state.restLeft=state.rest;state.restRun=true;updateTimer();
+ if(state.setIndex&gt;=currentDef()[1])$(&quot;#saveCurrentSet&quot;).textContent=&quot;ESERCIZIO COMPLETATO&quot;;
+}
+function nextExercise(){
+ if(state.index&lt;W[state.plan].length-1){state.index++;renderExercise()}else finishWorkout();
+}
+function prevExercise(){if(state.index&gt;0){state.index--;renderExercise()}}
+function finishWorkout(){
+ clearInterval(state.timer);state.restRun=false;
+ const totalSets=state.session.reduce((a,x)=&gt;a+x.reps.filter(Boolean).length,0);
+ const totalReps=state.session.reduce((a,x)=&gt;a+x.reps.reduce((q,r)=&gt;q+(r||0),0),0);
+ const volume=state.session.reduce((a,x)=&gt;a+x.reps.reduce((q,r)=&gt;q+(r||0)*x.load,0),0);
+ const obj={date:new Date().toLocaleDateString(&quot;it-IT&quot;),plan:state.plan,duration:fmtTime(state.elapsed),seconds:state.elapsed,totalSets,totalReps,volume,pr:0,exercises:state.session};
+ const all=sessions();all.push(obj);saveSessions(all);
+ $(&quot;#workoutActive&quot;).classList.add(&quot;hidden&quot;);$(&quot;#workoutComplete&quot;).classList.remove(&quot;hidden&quot;);
+ $(&quot;#completeGrid&quot;).innerHTML=`&lt;div class=&quot;complete-kpi&quot;&gt;&lt;b&gt;${fmtTime(state.elapsed)}&lt;/b&gt;&lt;span&gt;DURATA&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;complete-kpi&quot;&gt;&lt;b&gt;${totalSets}&lt;/b&gt;&lt;span&gt;SERIE&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;complete-kpi&quot;&gt;&lt;b&gt;${totalReps}&lt;/b&gt;&lt;span&gt;RIPETIZIONI&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;complete-kpi&quot;&gt;&lt;b&gt;${Math.round(volume).toLocaleString(&quot;it-IT&quot;)}&lt;/b&gt;&lt;span&gt;VOLUME KG&lt;/span&gt;&lt;/div&gt;`;
+}
+function updateTimer(){$(&quot;#timer&quot;).textContent=fmtTime(state.restLeft);$(&quot;#timer&quot;).classList.toggle(&quot;running&quot;,state.restRun)}
+setInterval(()=&gt;{if(state.restRun&amp;&amp;state.restLeft&gt;0){state.restLeft--;updateTimer()}else if(state.restRun&amp;&amp;state.restLeft&lt;=0){state.restRun=false;updateTimer()}},1000);
+function renderHistory(){
+ const s=sessions().slice().reverse();$(&quot;#historyList&quot;).innerHTML=s.length?s.map(x=&gt;`&lt;article class=&quot;session-card&quot;&gt;&lt;h3&gt;${x.plan}&lt;/h3&gt;&lt;p&gt;${x.date} · ${x.duration}&lt;/p&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Serie&lt;/span&gt;&lt;b&gt;${x.totalSets}&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Ripetizioni&lt;/span&gt;&lt;b&gt;${x.totalReps}&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;data-row&quot;&gt;&lt;span&gt;Volume&lt;/span&gt;&lt;b&gt;${Math.round(x.volume).toLocaleString(&quot;it-IT&quot;)} kg&lt;/b&gt;&lt;/div&gt;&lt;/article&gt;`).join(&quot;&quot;):`&lt;p class=&quot;lead&quot;&gt;Nessuna seduta salvata.&lt;/p&gt;`;
+}
+document.querySelectorAll(&quot;.nav[data-view]&quot;).forEach(n=&gt;n.onclick=()=&gt;{if(n.dataset.view===&quot;workout&quot;&amp;&amp;!state.start)startWorkout(state.plan);else switchView(n.dataset.view)});
+$(&quot;#startToday&quot;).onclick=()=&gt;startWorkout(&quot;THE LAB B · PULL CONTROL&quot;);
+$(&quot;#openExerciseDoc&quot;).onclick=()=&gt;{
+  const code=$(&quot;#woCode&quot;).textContent;
+  window.parent.postMessage({type:&quot;open-doc&quot;,code},&quot;*&quot;);
+};
+$(&quot;#saveCurrentSet&quot;).onclick=saveSet;$(&quot;#nextExercise&quot;).onclick=nextExercise;$(&quot;#prevExercise&quot;).onclick=prevExercise;
+$(&quot;#loadMinus&quot;).onclick=()=&gt;$(&quot;#loadInput&quot;).value=Math.max(0,Number($(&quot;#loadInput&quot;).value||0)-2.5);
+$(&quot;#loadPlus&quot;).onclick=()=&gt;$(&quot;#loadInput&quot;).value=Number($(&quot;#loadInput&quot;).value||0)+2.5;
+$(&quot;#timerToggle&quot;).onclick=()=&gt;{state.restRun=!state.restRun;updateTimer()};$(&quot;#timerReset&quot;).onclick=()=&gt;{state.restLeft=state.rest;state.restRun=false;updateTimer()};
+$(&quot;#abortWorkout&quot;).onclick=()=&gt;{if(confirm(&quot;Terminare e salvare la seduta attuale?&quot;))finishWorkout()};
+$(&quot;#backHome&quot;).onclick=()=&gt;{$(&quot;#workoutActive&quot;).classList.remove(&quot;hidden&quot;);$(&quot;#workoutComplete&quot;).classList.add(&quot;hidden&quot;);state.start=null;switchView(&quot;home&quot;)};
+setInterval(()=&gt;$(&quot;#clock&quot;).textContent=new Date().toLocaleString(&quot;it-IT&quot;),1000);
+renderHome();renderProgram();renderHistory();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+  <iframe id="docsFrame" srcdoc="&lt;!doctype html&gt;&lt;html lang=&#x27;it&#x27;&gt;&lt;head&gt;&lt;meta charset=&#x27;utf-8&#x27;&gt;&lt;meta name=&#x27;viewport&#x27; content=&#x27;width=device-width,initial-scale=1&#x27;&gt;&lt;title&gt;PROJECT SC OS&lt;/title&gt;
+&lt;style&gt;
+:root{--bg:#050607;--p:#0b0d10;--p2:#111419;--l:#292e35;--t:#f2f4f6;--m:#9299a3;--o:#ff7800;--r:#e34c4c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:Inter,Segoe UI,Arial}header{height:68px;position:sticky;top:0;z-index:20;display:grid;grid-template-columns:310px 1fr auto;align-items:center;background:#050607f2;border-bottom:1px solid var(--l)}.brand{display:flex;align-items:center;gap:14px;padding:0 18px;border-right:1px solid var(--l);height:68px}.shield{width:46px}.brand b{letter-spacing:.18em}.brand small{display:block;color:var(--m);font-size:9px;letter-spacing:.16em}.crumb{padding:0 24px;color:#bac0c7;font-size:11px}.search{width:330px;margin-right:16px;background:#0c0f12;border:1px solid var(--l);border-radius:9px;color:var(--t);padding:10px}.shell{display:grid;grid-template-columns:310px 1fr}.side{position:sticky;top:68px;height:calc(100vh - 68px);overflow:auto;border-right:1px solid var(--l);padding:12px 8px}.block{border:1px solid var(--l);border-radius:9px;padding:12px;margin-bottom:9px}.bt{color:var(--o);font-size:11px;font-weight:800;margin:2px 7px 10px}.nav,.zone,.ex{cursor:pointer}.nav{padding:11px;border-left:3px solid transparent;font-size:11px}.nav.active{color:var(--o);border-left-color:var(--o);background:linear-gradient(90deg,#ff78002b,transparent)}.nav small{display:block;color:var(--m);font-size:9px}.zone{padding:10px;border:1px solid var(--l);border-radius:8px;margin:7px 0;font-size:11px}.zone.active{border-color:var(--o)}.zone small{display:block;color:var(--m);font-size:9px}.ex{padding:8px;border-radius:7px}.ex:hover,.ex.active{background:#11151a}.ex b{font-size:9px;color:var(--o)}.ex span{display:block;font-size:10px}.view{padding:26px}.hero{display:grid;grid-template-columns:1.05fr .85fr .8fr;gap:16px;padding:30px 28px;background:radial-gradient(circle at 80% 14%,#ff780012,transparent 24%)}.hero h1{font-size:64px;line-height:.9;margin:5px 0}.code{color:var(--o);font-weight:800}.real{color:#bbc0c7;letter-spacing:.1em}.badge{display:inline-block;border:1px solid var(--l);padding:7px 11px;border-radius:999px;font-size:10px;margin:14px 6px 14px 0}.mission{color:#c0c5cb;line-height:1.7}.btn{border:1px solid var(--o);background:var(--o);color:#08090a;padding:10px 13px;border-radius:8px;font-weight:800;font-size:10px;text-decoration:none;display:inline-block}.art,.card,.plan{border:1px solid var(--l);background:linear-gradient(180deg,#0d1013,#090b0d);border-radius:10px;padding:17px}.art{display:grid;place-items:center;color:#626a74;font-size:10px}.ring{width:125px;height:125px;border-radius:50%;display:grid;place-items:center;position:relative}.ring:before{content:&#x27;&#x27;;width:98px;height:98px;border-radius:50%;background:#090b0d;position:absolute}.ring b{position:relative;font-size:44px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card h3,.plan h3{font-size:11px;letter-spacing:.08em;color:#c9cdd2}.quote{border-left:3px solid var(--o);padding:8px 11px;font-size:13px;line-height:1.55}.title{font-size:48px;margin:7px 0}.lead{color:#b7bdc4;line-height:1.7}.zonehero{padding:34px;border:1px solid var(--l);border-radius:14px;background:radial-gradient(circle at 85% 10%,#ff78001f,transparent 28%),#090b0d;margin-bottom:16px}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.goal{color:var(--m);font-size:11px;margin-bottom:12px}.row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 0;border-bottom:1px solid #20252b;font-size:11px}.row b{color:var(--o);font-size:9px}.catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cc{border:1px solid var(--l);background:#0a0d10;border-radius:10px;padding:15px;cursor:pointer}.cc:hover{border-color:var(--o)}.cc .id{color:var(--o);font-size:10px}.cc h4{margin:5px 0}.cc p{color:var(--m);font-size:10px;line-height:1.5}.score{font-size:24px;font-weight:800}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.kpi{border:1px solid var(--l);border-radius:10px;padding:18px}.kpi b{display:block;font-size:32px}.kpi span{font-size:10px;color:var(--m)}.hidden{display:none!important}@media(max-width:1100px){header{grid-template-columns:1fr}.crumb,.search{display:none}.shell{grid-template-columns:1fr}.side{display:none}.hero{grid-template-columns:1fr}.grid,.catalog,.plans,.kpis{grid-template-columns:1fr}.view{padding:16px}}
+
+
+.anatomy-card{padding:14px!important;display:block!important;min-height:360px}
+.anatomy-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--o);font-size:11px;letter-spacing:.08em}
+.anatomy-head span{color:var(--m);font-size:8px}
+.anatomy-image-wrap{position:relative;background:#dfe4e8;border:1px solid var(--l);border-radius:9px;overflow:hidden}
+.anatomy-image{display:block;width:100%;height:auto;filter:brightness(.86) contrast(1.08)}
+.muscle-overlay{position:absolute;inset:0;pointer-events:none}
+.muscle-zone{position:absolute;border-radius:48%;background:rgba(255,120,0,.64);border:1px solid rgba(255,191,123,.9);box-shadow:0 0 12px rgba(255,120,0,.55);mix-blend-mode:multiply}
+.muscle-zone.secondary{background:rgba(255,190,77,.46);border-color:rgba(255,220,150,.9);box-shadow:0 0 8px rgba(255,190,77,.35)}
+.muscle-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.muscle-chip{font-size:8px;border:1px solid var(--l);border-radius:999px;padding:5px 8px;color:#c9cdd2}
+.muscle-chip.primary{border-color:#ff7800;color:#ff9b41}.muscle-chip.secondary{border-color:#b57b2b;color:#e7bd74}
+.row[data-id]{cursor:pointer;transition:.18s}.row[data-id]:hover{background:rgba(255,120,0,.08);padding-left:8px;padding-right:8px;border-radius:6px}
+
+.zone-dashboard-card{cursor:pointer;transition:.2s}.zone-dashboard-card:hover{border-color:var(--o);transform:translateY(-2px)}
+#detailView .hero&gt;div:first-child{min-height:300px}
+
+/* PROJECT SC v1.7 visual upgrade */
+header{box-shadow:0 10px 35px rgba(0,0,0,.28)}
+.view{max-width:1680px;margin:0 auto}
+.hero{grid-template-columns:1.28fr .82fr .72fr;align-items:stretch}
+.hero&gt;div:first-child{border:1px solid var(--l);border-radius:12px;padding:22px;background:linear-gradient(180deg,#0b0d10,#080a0c)}
+.hero h1{font-size:58px;line-height:.96;margin:10px 0 12px}
+.hero .mission{max-width:700px}
+.anatomy-card{background:linear-gradient(180deg,#0c0f12,#090b0d)!important}
+.anatomy-image-wrap{background:#e2e6e9}
+.anatomy-image{filter:none!important}
+.muscle-shape{
+  fill:#ff7800!important;
+  stroke:#b94700!important;
+  stroke-width:2!important;
+  opacity:.93;
+  filter:none!important;
+  mix-blend-mode:multiply;
+}
+.muscle-shape.secondary{
+  fill:#ffad4a!important;
+  stroke:#d97706!important;
+  opacity:.78;
+}
+.muscle-chip{font-size:9px;font-weight:800;letter-spacing:.03em}
+.muscle-chip.primary{background:rgba(255,120,0,.09)}
+.muscle-chip.secondary{background:rgba(255,174,74,.07)}
+.score-card{min-height:100%;display:flex;flex-direction:column;justify-content:flex-start}
+.score-card .code{font-size:24px;margin-bottom:12px}
+.ring{width:170px;height:170px;margin-top:4px}
+.ring:before{width:132px;height:132px}
+.ring b{font-size:58px}
+.grid{grid-template-columns:repeat(3,1fr)}
+.grid .card:last-child{grid-column:span 1}
+.card{min-height:170px}
+.card h3{color:var(--o);font-size:13px}
+.quote{font-size:12px}
+.btn{box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.zone-dashboard-card{background:linear-gradient(180deg,#0e1115,#090b0d)}
+.plan-card,.plan{box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+@media(max-width:1400px){.hero{grid-template-columns:1fr 1fr}.score-card{grid-column:1/-1}.grid{grid-template-columns:repeat(2,1fr)}}
+
+
+/* PROJECT SC v1.8 — anatomy refinement */
+.anatomy-image-wrap{
+  background:#eef1f3;
+  border:1px solid #3a414a;
+  border-radius:10px;
+  overflow:hidden;
+}
+.anatomy-image{
+  display:block;
+  width:100%;
+  height:auto;
+  filter:brightness(.98) contrast(1.05)!important;
+}
+.muscle-shape{
+  fill:#ff7800!important;
+  stroke:#d95f00!important;
+  stroke-width:2.2!important;
+  opacity:.96;
+  filter:none!important;
+  mix-blend-mode:multiply;
+}
+.muscle-shape.secondary{
+  fill:#ffb25e!important;
+  stroke:#f08c22!important;
+  opacity:.82;
+}
+.muscle-legend{
+  justify-content:center;
+  margin-top:12px;
+}
+.muscle-chip{
+  padding:7px 12px;
+  font-size:9px;
+  font-weight:800;
+  border-radius:999px;
+}
+.muscle-chip.primary{
+  border-color:#ff7800;
+  color:#ff9b41;
+  background:rgba(255,120,0,.07);
+}
+.muscle-chip.secondary{
+  border-color:#d9913f;
+  color:#ffc27f;
+  background:rgba(255,178,94,.06);
+}
+.anatomy-key{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-top:10px;
+  color:var(--m);
+  font-size:9px;
+  letter-spacing:.04em;
+}
+.anatomy-key span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.anatomy-swatch{
+  width:16px;height:9px;border-radius:2px;display:inline-block;
+}
+.anatomy-swatch.primary{background:#ff7800}
+.anatomy-swatch.secondary{background:#ffb25e}
+
+
+/* v2.0 — true segmented SVG anatomy */
+.anatomy-component-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  background:#101317;
+  border:1px solid #343a42;
+  border-radius:10px;
+  padding:12px;
+  min-height:330px;
+}
+.anatomy-view{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.anatomy-view-label{
+  color:#8f98a3;
+  font-size:8px;
+  letter-spacing:.14em;
+  margin-bottom:4px;
+}
+.muscle-react-mount{
+  width:100%;
+  min-height:285px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.muscle-react-mount svg{
+  width:100%!important;
+  max-width:230px!important;
+  height:285px!important;
+  display:block;
+}
+.anatomy-status{
+  text-align:center;
+  color:#8f98a3;
+  font-size:8px;
+  letter-spacing:.08em;
+  margin-top:8px;
+}
+.anatomy-status.ready{color:#43c977}
+.anatomy-status.error{color:#e65b5b}
+.anatomy-image-wrap,.anatomy-image,.muscle-overlay{display:none!important}
+@media(max-width:650px){
+  .anatomy-component-wrap{grid-template-columns:1fr}
+}
+
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;header&gt;&lt;div class=&#x27;brand&#x27;&gt;&lt;svg class=&#x27;shield&#x27; viewBox=&#x27;0 0 80 90&#x27;&gt;&lt;path d=&#x27;M40 4 72 18v27c0 21-14 35-32 41C22 80 8 66 8 45V18Z&#x27; fill=&#x27;none&#x27; stroke=&#x27;#ff7800&#x27; stroke-width=&#x27;4&#x27;/&gt;&lt;path d=&#x27;m40 19 13 18-9-1 12 15-16-7-16 7 12-15-9 1Z&#x27; fill=&#x27;#f3f4f5&#x27;/&gt;&lt;path d=&#x27;m40 49 15 10-15 11-15-11Z&#x27; fill=&#x27;#ff7800&#x27;/&gt;&lt;/svg&gt;&lt;div&gt;&lt;b&gt;PROJECT SC&lt;/b&gt;&lt;small&gt;PERFORMANCE ENGINEERING OS&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;crumb&#x27;&gt;MANUALE · PIANI · PROGRESSIONI · REV 1.1&lt;/div&gt;&lt;input id=&#x27;search&#x27; class=&#x27;search&#x27; placeholder=&#x27;Cerca codice, esercizio o muscolo...&#x27;&gt;&lt;/header&gt;
+&lt;div class=&#x27;shell&#x27;&gt;&lt;aside class=&#x27;side&#x27;&gt;&lt;div class=&#x27;block&#x27;&gt;&lt;div class=&#x27;bt&#x27;&gt;NAVIGAZIONE&lt;/div&gt;&lt;div class=&#x27;nav active&#x27; data-v=&#x27;dash&#x27;&gt;DASHBOARD&lt;small&gt;Panoramica&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;nav&#x27; data-v=&#x27;plans&#x27;&gt;PIANI PER ZONA&lt;small&gt;Lab, Forge, Arena&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;nav&#x27; data-v=&#x27;catalog&#x27;&gt;ATLANTE COMPLETO&lt;small&gt;Tutti gli esercizi&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;nav&#x27; data-v=&#x27;detail&#x27;&gt;MANUALE TECNICO&lt;small&gt;Scheda attiva&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;block&#x27;&gt;&lt;div class=&#x27;bt&#x27;&gt;ZONE&lt;/div&gt;&lt;div class=&#x27;zone active&#x27; data-z=&#x27;ALL&#x27;&gt;TUTTO PROJECT SC&lt;small&gt;Sistema completo&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;zone&#x27; data-z=&#x27;THE LAB&#x27;&gt;THE LAB&lt;small&gt;Precisione&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;zone&#x27; data-z=&#x27;THE FORGE&#x27;&gt;THE FORGE&lt;small&gt;Carico&lt;/small&gt;&lt;/div&gt;&lt;div class=&#x27;zone&#x27; data-z=&#x27;THE ARENA&#x27;&gt;THE ARENA&lt;small&gt;Skill&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;block&#x27;&gt;&lt;div class=&#x27;bt&#x27;&gt;ESERCIZI&lt;/div&gt;&lt;div id=&#x27;exlist&#x27;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/aside&gt;
+&lt;main&gt;&lt;section id=&#x27;dashView&#x27; class=&#x27;view&#x27;&gt;&lt;div class=&#x27;zonehero&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;PROJECT SC OS&lt;/div&gt;&lt;h1 class=&#x27;title&#x27;&gt;BUILT, NOT BORN.&lt;/h1&gt;&lt;p class=&#x27;lead&#x27;&gt;Manuale tecnico, atlante esercizi e piani completi per THE LAB, THE FORGE e THE ARENA.&lt;/p&gt;&lt;/div&gt;&lt;div class=&#x27;kpis&#x27;&gt;&lt;div class=&#x27;kpi&#x27;&gt;&lt;b id=&#x27;kex&#x27;&gt;&lt;/b&gt;&lt;span&gt;ESERCIZI&lt;/span&gt;&lt;/div&gt;&lt;div class=&#x27;kpi&#x27;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;ZONE&lt;/span&gt;&lt;/div&gt;&lt;div class=&#x27;kpi&#x27;&gt;&lt;b id=&#x27;kpl&#x27;&gt;&lt;/b&gt;&lt;span&gt;PIANI&lt;/span&gt;&lt;/div&gt;&lt;div class=&#x27;kpi&#x27;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;OBIETTIVO MASTER&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=&#x27;dz&#x27; class=&#x27;plans&#x27;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&#x27;plansView&#x27; class=&#x27;view hidden&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;SC-PLANS&lt;/div&gt;&lt;h1 class=&#x27;title&#x27;&gt;PIANI PER ZONA&lt;/h1&gt;&lt;div id=&#x27;pc&#x27;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&#x27;catalogView&#x27; class=&#x27;view hidden&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;SC-ATLAS&lt;/div&gt;&lt;h1 class=&#x27;title&#x27;&gt;ATLANTE COMPLETO&lt;/h1&gt;&lt;div id=&#x27;cg&#x27; class=&#x27;catalog&#x27;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section id=&#x27;detailView&#x27; class=&#x27;hidden&#x27;&gt;&lt;div class=&#x27;hero&#x27;&gt;&lt;div&gt;
+&lt;div style=&#x27;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap&#x27;&gt;
+  &lt;div id=&#x27;code&#x27; class=&#x27;code&#x27;&gt;&lt;/div&gt;
+  &lt;button class=&#x27;btn&#x27; onclick=&quot;view(&#x27;plans&#x27;)&quot;&gt;← TORNA AI PIANI&lt;/button&gt;
+&lt;/div&gt;
+&lt;h1 id=&#x27;name&#x27;&gt;&lt;/h1&gt;&lt;div id=&#x27;real&#x27; class=&#x27;real&#x27;&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span id=&#x27;cat&#x27; class=&#x27;badge&#x27;&gt;&lt;/span&gt;&lt;span id=&#x27;zb&#x27; class=&#x27;badge&#x27;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;p id=&#x27;mission&#x27; class=&#x27;mission&#x27;&gt;&lt;/p&gt;
+&lt;a id=&#x27;video&#x27; class=&#x27;btn&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;APRI L’ESERCIZIO SU MUSCLEWIKI ↗&lt;/a&gt;
+&lt;div style=&#x27;margin-top:8px;color:var(--m);font-size:9px&#x27;&gt;Collegamento individuale al movimento specifico o al suo equivalente biomeccanico.&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#x27;art anatomy-card&#x27;&gt;
+  &lt;div class=&#x27;anatomy-head&#x27;&gt;&lt;b&gt;MAPPA MUSCOLARE&lt;/b&gt;&lt;span&gt;FRONTE / RETRO&lt;/span&gt;&lt;/div&gt;
+  
+&lt;div class=&#x27;anatomy-component-wrap&#x27;&gt;
+  &lt;div class=&#x27;anatomy-view&#x27;&gt;
+    &lt;div class=&#x27;anatomy-view-label&#x27;&gt;FRONTE&lt;/div&gt;
+    &lt;div id=&#x27;muscleFrontMount&#x27; class=&#x27;muscle-react-mount&#x27;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#x27;anatomy-view&#x27;&gt;
+    &lt;div class=&#x27;anatomy-view-label&#x27;&gt;RETRO&lt;/div&gt;
+    &lt;div id=&#x27;muscleBackMount&#x27; class=&#x27;muscle-react-mount&#x27;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#x27;anatomyStatus&#x27; class=&#x27;anatomy-status&#x27;&gt;CARICAMENTO MAPPA ANATOMICA…&lt;/div&gt;
+&lt;div class=&#x27;anatomy-key&#x27;&gt;
+      &lt;span&gt;&lt;i class=&#x27;anatomy-swatch primary&#x27;&gt;&lt;/i&gt;PRIMARI&lt;/span&gt;
+      &lt;span&gt;&lt;i class=&#x27;anatomy-swatch secondary&#x27;&gt;&lt;/i&gt;SECONDARI&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div id=&#x27;muscleLegend&#x27; class=&#x27;muscle-legend&#x27;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#x27;card score-card&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;SC SCORE&lt;/div&gt;&lt;div id=&#x27;ring&#x27; class=&#x27;ring&#x27;&gt;&lt;b id=&#x27;score&#x27;&gt;&lt;/b&gt;&lt;/div&gt;
+&lt;div style=&#x27;margin-top:16px&#x27;&gt;
+  &lt;div class=&#x27;row&#x27;&gt;&lt;span&gt;Attivazione muscolare&lt;/span&gt;&lt;span id=&#x27;scoreA&#x27;&gt;—&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&#x27;row&#x27;&gt;&lt;span&gt;Esecuzione tecnica&lt;/span&gt;&lt;span id=&#x27;scoreB&#x27;&gt;—&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&#x27;row&#x27;&gt;&lt;span&gt;Sicurezza&lt;/span&gt;&lt;span id=&#x27;scoreC&#x27;&gt;—&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&#x27;row&#x27;&gt;&lt;span&gt;Trasferibilità&lt;/span&gt;&lt;span id=&#x27;scoreD&#x27;&gt;—&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#x27;view&#x27;&gt;&lt;div class=&#x27;grid&#x27;&gt;&lt;article class=&#x27;card&#x27;&gt;&lt;h3&gt;MUSCOLI&lt;/h3&gt;&lt;div id=&#x27;muscles&#x27; class=&#x27;quote&#x27;&gt;&lt;/div&gt;&lt;/article&gt;&lt;article class=&#x27;card&#x27;&gt;&lt;h3&gt;SETUP&lt;/h3&gt;&lt;div id=&#x27;setup&#x27; class=&#x27;quote&#x27;&gt;&lt;/div&gt;&lt;/article&gt;&lt;article class=&#x27;card&#x27;&gt;&lt;h3&gt;ERRORI&lt;/h3&gt;&lt;div id=&#x27;errors&#x27; class=&#x27;quote&#x27; style=&#x27;border-color:var(--r)&#x27;&gt;&lt;/div&gt;&lt;/article&gt;&lt;article class=&#x27;card&#x27;&gt;&lt;h3&gt;MISSIONE&lt;/h3&gt;&lt;div id=&#x27;mission2&#x27; class=&#x27;quote&#x27;&gt;&lt;/div&gt;&lt;/article&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;&lt;/main&gt;&lt;/div&gt;
+&lt;script&gt;
+const E=[[&quot;SC-001&quot;, &quot;THE LAB&quot;, &quot;THE COBRA&quot;, &quot;Vertical Traction&quot;, &quot;Fondatore&quot;, 98, &quot;Gran dorsale, grande rotondo, bicipite&quot;, &quot;Forza di tirata verticale e trasferimento alle trazioni.&quot;, &quot;Presa neutra; sterno alto; scapole depresse; bacino stabile.&quot;, &quot;Slancio; spalle alte; tirata dominata dai bicipiti.&quot;, &quot;https://musclewiki.com/exercise/neutral-pulldown&quot;], [&quot;SC-002&quot;, &quot;THE LAB&quot;, &quot;THE BUILDER&quot;, &quot;Chest Press&quot;, &quot;Fondatore&quot;, 95, &quot;Pettorale, tricipite, deltoide anteriore&quot;, &quot;Massa e forza di spinta sul petto.&quot;, &quot;Maniglie al centro petto; scapole addotte; piedi saldi.&quot;, &quot;Spalle avanti; sedile errato; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/machine-chest-press&quot;], [&quot;SC-003&quot;, &quot;THE LAB&quot;, &quot;THE CANNON&quot;, &quot;Shoulder Press&quot;, &quot;Fondatore&quot;, 93, &quot;Deltoidi, tricipiti&quot;, &quot;Spalle piene e forza verticale.&quot;, &quot;Schiena aderente; presa neutra; avambracci verticali.&quot;, &quot;Iperestensione lombare; ROM forzato.&quot;, &quot;https://musclewiki.com/exercise/machine-neutral-overhead-press&quot;], [&quot;SC-004&quot;, &quot;THE LAB&quot;, &quot;THE WING&quot;, &quot;Lat Machine&quot;, &quot;Fondatore&quot;, 94, &quot;Dorsali, bicipiti&quot;, &quot;Ampiezza dorsale e controllo della tirata.&quot;, &quot;Rullo cosce aderente; torace alto.&quot;, &quot;Dietro nuca; troppo slancio; ROM corto.&quot;, &quot;https://musclewiki.com/exercise/neutral-pulldown&quot;], [&quot;SC-006&quot;, &quot;THE LAB&quot;, &quot;THE SQUEEZE&quot;, &quot;Pec Deck&quot;, &quot;Costruttore&quot;, 90, &quot;Pettorale, deltoide anteriore&quot;, &quot;Tensione continua e volume sul petto.&quot;, &quot;Gomiti al centro petto; scapole ferme.&quot;, &quot;Spalle avanti; troppo allungamento.&quot;, &quot;https://musclewiki.com/exercise/machine-pec-fly&quot;], [&quot;SC-007&quot;, &quot;THE LAB&quot;, &quot;THE CROSSLINE&quot;, &quot;Cable Fly&quot;, &quot;Costruttore&quot;, 88, &quot;Pettorale, stabilizzatori scapolari&quot;, &quot;Traiettoria personalizzabile per il petto.&quot;, &quot;Un passo avanti; gomiti semiflessi.&quot;, &quot;Movimento da pressa; instabilità.&quot;, &quot;https://musclewiki.com/exercise/cable-pec-fly&quot;], [&quot;SC-009&quot;, &quot;THE LAB&quot;, &quot;THE QUAD DRIVE&quot;, &quot;Leg Extension&quot;, &quot;Complementare&quot;, 84, &quot;Quadricipiti&quot;, &quot;Lavoro diretto sul quadricipite.&quot;, &quot;Ginocchio sul perno; schiena aderente.&quot;, &quot;Slancio; perno errato; ROM ridotto.&quot;, &quot;https://musclewiki.com/exercise/machine-leg-extension&quot;], [&quot;SC-011&quot;, &quot;THE LAB&quot;, &quot;THE REAR GUARD&quot;, &quot;Reverse Pec Deck&quot;, &quot;Rifinitore&quot;, 89, &quot;Deltoide posteriore, romboidi&quot;, &quot;Bilanciare il volume di spinta.&quot;, &quot;Petto aderente; collo neutro.&quot;, &quot;Trapezio dominante; colpo di busto.&quot;, &quot;https://musclewiki.com/exercise/machine-reverse-fly&quot;], [&quot;SC-012&quot;, &quot;THE LAB&quot;, &quot;THE CABLE CORE&quot;, &quot;Pallof Press&quot;, &quot;Terapeutico&quot;, 86, &quot;Obliqui, trasverso, core&quot;, &quot;Anti-rotazione e controllo del tronco.&quot;, &quot;Costole controllate; bacino neutro.&quot;, &quot;Ruotare col cavo; carico eccessivo.&quot;, &quot;https://musclewiki.com/exercise/cable-pallof-press&quot;], [&quot;SC-013&quot;, &quot;THE LAB&quot;, &quot;THE LEG CURL&quot;, &quot;Leg Curl&quot;, &quot;Complementare&quot;, 85, &quot;Femorali&quot;, &quot;Sviluppare i femorali con controllo.&quot;, &quot;Ginocchio sul perno; bacino fermo.&quot;, &quot;Sollevare il bacino; corsa breve.&quot;, &quot;https://musclewiki.com/exercise/machine-seated-leg-curl&quot;], [&quot;SC-014&quot;, &quot;THE LAB&quot;, &quot;THE HIP LINE&quot;, &quot;Hip Abductor&quot;, &quot;Complementare&quot;, 78, &quot;Gluteo medio&quot;, &quot;Stabilità del bacino.&quot;, &quot;Schiena stabile; movimento controllato.&quot;, &quot;Slancio; ROM forzato.&quot;, &quot;https://musclewiki.com/exercise/machine-hip-abduction&quot;], [&quot;SC-015&quot;, &quot;THE LAB&quot;, &quot;THE CRUNCH CORE&quot;, &quot;Crunch Machine&quot;, &quot;Rifinitore&quot;, 79, &quot;Retto addominale&quot;, &quot;Flessione controllata del tronco.&quot;, &quot;Bacino fermo; espirazione attiva.&quot;, &quot;Tirare con le braccia; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/machine-crunch&quot;], [&quot;SC-005&quot;, &quot;THE FORGE&quot;, &quot;THE ANCHOR&quot;, &quot;Chest Supported Row&quot;, &quot;Fondatore&quot;, 96, &quot;Romboidi, trapezio medio, dorsali&quot;, &quot;Spessore dorsale senza slancio.&quot;, &quot;Petto sul supporto; collo neutro.&quot;, &quot;Staccare il petto; eccentrica corta.&quot;, &quot;https://musclewiki.com/exercise/machine-rear-deltoid-row&quot;], [&quot;SC-008&quot;, &quot;THE FORGE&quot;, &quot;THE PREACHER&quot;, &quot;EZ Preacher Curl&quot;, &quot;Costruttore&quot;, 91, &quot;Bicipite, brachiale&quot;, &quot;Bicipiti senza slancio.&quot;, &quot;Braccia sul supporto; polsi neutri.&quot;, &quot;Gomiti che si staccano; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/ez-bar-preacher-curl&quot;], [&quot;SC-010&quot;, &quot;THE FORGE&quot;, &quot;THE PRESS PLATFORM&quot;, &quot;Leg Press&quot;, &quot;Complementare&quot;, 87, &quot;Quadricipiti, glutei, femorali&quot;, &quot;Forza e massa degli arti inferiori.&quot;, &quot;Piedi larghezza spalle; bacino aderente.&quot;, &quot;Retroversione; ginocchia interne.&quot;, &quot;https://musclewiki.com/exercise/machine-leg-press&quot;], [&quot;SC-016&quot;, &quot;THE FORGE&quot;, &quot;THE INCLINE BUILDER&quot;, &quot;Incline Dumbbell Press&quot;, &quot;Fondatore&quot;, 97, &quot;Pettorale alto, deltoide anteriore&quot;, &quot;Upper Chest Shelf.&quot;, &quot;Panca 20–30°; scapole addotte.&quot;, &quot;Panca troppo verticale; gomiti larghi.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-incline-bench-press&quot;], [&quot;SC-017&quot;, &quot;THE FORGE&quot;, &quot;THE FLAT FORGE&quot;, &quot;Dumbbell Bench Press&quot;, &quot;Costruttore&quot;, 92, &quot;Pettorale, tricipiti&quot;, &quot;Spinta libera con ampia escursione.&quot;, &quot;Scapole stabili; piedi a terra.&quot;, &quot;Spalle avanti; rimbalzo.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-bench-press&quot;], [&quot;SC-018&quot;, &quot;THE FORGE&quot;, &quot;THE SPIDER&quot;, &quot;Spider Curl EZ&quot;, &quot;Fondatore&quot;, 95, &quot;Bicipite, brachiale&quot;, &quot;Bicipiti in posizione stabile.&quot;, &quot;Petto sulla panca; gomiti fermi.&quot;, &quot;Oscillazione; spalle avanti.&quot;, &quot;https://musclewiki.com/exercise/barbell-spider-curl&quot;], [&quot;SC-019&quot;, &quot;THE FORGE&quot;, &quot;THE ROPE EXTENSION&quot;, &quot;Overhead Rope Extension&quot;, &quot;Fondatore&quot;, 94, &quot;Tricipite, capo lungo&quot;, &quot;Massa del tricipite.&quot;, &quot;Cavo alto; busto stabile; gomiti stretti.&quot;, &quot;Gomiti aperti; schiena estesa.&quot;, &quot;https://musclewiki.com/exercise/cable-overhead-tricep-extension&quot;], [&quot;SC-020&quot;, &quot;THE FORGE&quot;, &quot;THE LATERAL CAP&quot;, &quot;Dumbbell Lateral Raise&quot;, &quot;Fondatore&quot;, 96, &quot;Deltoide laterale&quot;, &quot;Costruire larghezza delle spalle.&quot;, &quot;Manubri leggeri; gomiti morbidi.&quot;, &quot;Slancio; trapezio dominante.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-lateral-raise&quot;], [&quot;SC-021&quot;, &quot;THE FORGE&quot;, &quot;THE HAMMER&quot;, &quot;Hammer Curl&quot;, &quot;Costruttore&quot;, 89, &quot;Brachiale, brachioradiale&quot;, &quot;Spessore del braccio e avambracci.&quot;, &quot;Presa neutra; gomiti ai fianchi.&quot;, &quot;Oscillare; flettere il polso.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-hammer-curl&quot;], [&quot;SC-022&quot;, &quot;THE FORGE&quot;, &quot;THE FOREARM GRIP&quot;, &quot;Wrist Curl / Reverse Curl&quot;, &quot;Rifinitore&quot;, 82, &quot;Avambracci&quot;, &quot;Popeye forearms e grip.&quot;, &quot;Avambracci supportati; ROM controllato.&quot;, &quot;Rimbalzo; polso deviato.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-wrist-curl&quot;], [&quot;SC-023&quot;, &quot;THE FORGE&quot;, &quot;THE ROW ENGINE&quot;, &quot;One Arm Dumbbell Row&quot;, &quot;Costruttore&quot;, 90, &quot;Dorsali, romboidi, bicipite&quot;, &quot;Tirata libera e simmetria.&quot;, &quot;Bacino neutro; gomito verso il fianco.&quot;, &quot;Rotazione del busto; corsa breve.&quot;, &quot;https://musclewiki.com/exercise/dumbbell-row&quot;], [&quot;SC-024&quot;, &quot;THE FORGE&quot;, &quot;THE CALF DRIVE&quot;, &quot;Standing Calf Raise&quot;, &quot;Complementare&quot;, 80, &quot;Polpacci&quot;, &quot;Polpaccio e stabilità caviglia.&quot;, &quot;Avampiede stabile; tallone libero.&quot;, &quot;Rimbalzo; ROM corto.&quot;, &quot;https://musclewiki.com/exercise/machine-standing-calf-raise&quot;], [&quot;SC-A01&quot;, &quot;THE ARENA&quot;, &quot;THE PULL-UP&quot;, &quot;Pull-Up&quot;, &quot;Skill Fondatrice&quot;, 100, &quot;Dorsali, bicipiti, core, grip&quot;, &quot;Obiettivo: tirare il proprio corpo.&quot;, &quot;Presa prona; scapole attive.&quot;, &quot;Kipping; mezzo ROM.&quot;, &quot;https://musclewiki.com/exercise/pull-ups&quot;], [&quot;SC-A02&quot;, &quot;THE ARENA&quot;, &quot;THE CHIN-UP&quot;, &quot;Chin-Up&quot;, &quot;Skill&quot;, 95, &quot;Dorsali, bicipiti&quot;, &quot;Volume di trazione con bicipite.&quot;, &quot;Presa supina; torace alto.&quot;, &quot;Dondolio; spalle passive.&quot;, &quot;https://musclewiki.com/exercise/chin-ups&quot;], [&quot;SC-A03&quot;, &quot;THE ARENA&quot;, &quot;THE NEUTRAL PULL&quot;, &quot;Neutral Pull-Up&quot;, &quot;Skill&quot;, 96, &quot;Dorsali, brachiale&quot;, &quot;Trazione verticale tollerabile.&quot;, &quot;Presa neutra; core attivo.&quot;, &quot;Scapole passive; slancio.&quot;, &quot;https://musclewiki.com/exercise/neutral-grip-pull-ups&quot;], [&quot;SC-A04&quot;, &quot;THE ARENA&quot;, &quot;THE AUSTRALIAN&quot;, &quot;Inverted Row&quot;, &quot;Progressione&quot;, 91, &quot;Dorsali, romboidi&quot;, &quot;Base della tirata orizzontale.&quot;, &quot;Corpo in linea; sbarra al petto.&quot;, &quot;Bacino basso; collo avanti.&quot;, &quot;https://musclewiki.com/exercise/inverted-row&quot;], [&quot;SC-A05&quot;, &quot;THE ARENA&quot;, &quot;THE DIP&quot;, &quot;Parallel Bar Dip&quot;, &quot;Skill Fondatrice&quot;, 94, &quot;Pettorale, tricipiti&quot;, &quot;Forza di spinta e base muscle-up.&quot;, &quot;Scapole depresse; busto stabile.&quot;, &quot;Spalle avanti; profondità forzata.&quot;, &quot;https://musclewiki.com/exercise/dips&quot;], [&quot;SC-A06&quot;, &quot;THE ARENA&quot;, &quot;THE HANG&quot;, &quot;Dead / Active Hang&quot;, &quot;Prerequisito&quot;, 92, &quot;Grip, dorsali&quot;, &quot;Grip e controllo scapolare.&quot;, &quot;Presa salda; corpo fermo.&quot;, &quot;Dolore ignorato; dondolio.&quot;, &quot;https://musclewiki.com/exercise/dead-hang&quot;], [&quot;SC-A07&quot;, &quot;THE ARENA&quot;, &quot;THE SCAP PULL&quot;, &quot;Scapular Pull-Up&quot;, &quot;Prerequisito&quot;, 95, &quot;Trapezio basso, dorsali&quot;, &quot;Avvio corretto della trazione.&quot;, &quot;Gomiti estesi; scapole depresse.&quot;, &quot;Piegare i gomiti; slancio.&quot;, &quot;https://musclewiki.com/exercise/scapular-pull-ups&quot;], [&quot;SC-A08&quot;, &quot;THE ARENA&quot;, &quot;THE KNEE RAISE&quot;, &quot;Hanging Knee Raise&quot;, &quot;Costruttore&quot;, 88, &quot;Addominali, grip&quot;, &quot;Core sospeso e controllo bacino.&quot;, &quot;Hang attivo; retroversione.&quot;, &quot;Dondolio; spalle passive.&quot;, &quot;https://musclewiki.com/exercise/hanging-knee-raises&quot;], [&quot;SC-A09&quot;, &quot;THE ARENA&quot;, &quot;THE LEG RAISE&quot;, &quot;Hanging Leg Raise&quot;, &quot;Skill&quot;, 92, &quot;Addominali, grip&quot;, &quot;Core avanzato e toes-to-bar.&quot;, &quot;Bacino in retroversione.&quot;, &quot;Slancio; lombare estesa.&quot;, &quot;https://musclewiki.com/exercise/hanging-leg-raises&quot;], [&quot;SC-A10&quot;, &quot;THE ARENA&quot;, &quot;THE TOES TO BAR&quot;, &quot;Toes-to-Bar&quot;, &quot;Skill Avanzata&quot;, 95, &quot;Core, dorsali, grip&quot;, &quot;Controllo globale sospeso.&quot;, &quot;Prerequisito: leg raise pulito.&quot;, &quot;Kipping incontrollato.&quot;, &quot;https://musclewiki.com/exercise/toes-to-bar&quot;], [&quot;SC-A11&quot;, &quot;THE ARENA&quot;, &quot;THE CHEST TO BAR&quot;, &quot;Chest-to-Bar Pull-Up&quot;, &quot;Skill Avanzata&quot;, 99, &quot;Dorsali, bicipiti&quot;, &quot;Passaggio verso muscle-up.&quot;, &quot;Trazione esplosiva; sterno alla sbarra.&quot;, &quot;Solo mento sopra sbarra.&quot;, &quot;https://musclewiki.com/exercise/chest-to-bar-pull-up&quot;], [&quot;SC-A12&quot;, &quot;THE ARENA&quot;, &quot;THE MUSCLE-UP&quot;, &quot;Bar Muscle-Up&quot;, &quot;Obiettivo Master&quot;, 100, &quot;Full body&quot;, &quot;Obiettivo finale Strength Transfer.&quot;, &quot;10+ pull-up, chest-to-bar e dip solidi.&quot;, &quot;Tentarlo senza prerequisiti.&quot;, &quot;https://musclewiki.com/exercise/muscle-up&quot;], [&quot;SC-A13&quot;, &quot;THE ARENA&quot;, &quot;THE L-SIT&quot;, &quot;L-Sit&quot;, &quot;Skill&quot;, 90, &quot;Core, flessori anca&quot;, &quot;Compressione e controllo.&quot;, &quot;Spalle depresse; gomiti estesi.&quot;, &quot;Spalle alte; gambe molli.&quot;, &quot;https://musclewiki.com/exercise/bodyweight-hanging-l-sit&quot;], [&quot;SC-A14&quot;, &quot;THE ARENA&quot;, &quot;THE FRONT LEVER PATH&quot;, &quot;Front Lever Progression&quot;, &quot;Skill Avanzata&quot;, 96, &quot;Dorsali, core&quot;, &quot;Forza isometrica avanzata.&quot;, &quot;Progressioni tuck; scapole depresse.&quot;, &quot;Braccia piegate; progressione eccessiva.&quot;, &quot;https://musclewiki.com/exercise/front-lever&quot;]],P={&quot;THE LAB&quot;: [[&quot;LAB A · PUSH PRECISION&quot;, &quot;Petto alto, spalle e tricipiti&quot;, [[&quot;SC-016&quot;, &quot;4×6–10&quot;], [&quot;SC-002&quot;, &quot;3×8–12&quot;], [&quot;SC-003&quot;, &quot;3×8–12&quot;], [&quot;SC-006&quot;, &quot;3×12–15&quot;], [&quot;SC-020&quot;, &quot;4×12–20&quot;], [&quot;SC-019&quot;, &quot;3×10–15&quot;], [&quot;SC-012&quot;, &quot;3×10/lato&quot;]]], [&quot;LAB B · PULL CONTROL&quot;, &quot;Dorso, bicipiti e controllo scapolare&quot;, [[&quot;SC-001&quot;, &quot;4×6–10&quot;], [&quot;SC-004&quot;, &quot;3×8–12&quot;], [&quot;SC-005&quot;, &quot;4×8–12&quot;], [&quot;SC-011&quot;, &quot;3×12–20&quot;], [&quot;SC-018&quot;, &quot;3×8–12&quot;], [&quot;SC-021&quot;, &quot;3×10–14&quot;]]], [&quot;LAB C · LOWER &amp; CORE&quot;, &quot;Gambe efficienti e core stabile&quot;, [[&quot;SC-010&quot;, &quot;4×8–12&quot;], [&quot;SC-009&quot;, &quot;3×10–15&quot;], [&quot;SC-013&quot;, &quot;3×10–15&quot;], [&quot;SC-014&quot;, &quot;3×15–20&quot;], [&quot;SC-024&quot;, &quot;4×10–15&quot;], [&quot;SC-015&quot;, &quot;3×12–15&quot;]]]], &quot;THE FORGE&quot;: [[&quot;FORGE A · UPPER CHEST&quot;, &quot;Upper Chest Shelf e forza di spinta&quot;, [[&quot;SC-016&quot;, &quot;5×5–8&quot;], [&quot;SC-017&quot;, &quot;3×8–10&quot;], [&quot;SC-002&quot;, &quot;3×8–12&quot;], [&quot;SC-007&quot;, &quot;3×12–15&quot;], [&quot;SC-020&quot;, &quot;4×12–20&quot;], [&quot;SC-019&quot;, &quot;4×8–12&quot;]]], [&quot;FORGE B · COBRA BACK&quot;, &quot;Ampiezza, spessore e braccia&quot;, [[&quot;SC-001&quot;, &quot;4×6–10&quot;], [&quot;SC-005&quot;, &quot;4×6–10&quot;], [&quot;SC-023&quot;, &quot;3×8–12/lato&quot;], [&quot;SC-011&quot;, &quot;3×15–20&quot;], [&quot;SC-018&quot;, &quot;4×8–12&quot;], [&quot;SC-021&quot;, &quot;3×10–14&quot;], [&quot;SC-022&quot;, &quot;3×12–20&quot;]]], [&quot;FORGE C · FOUNDATION&quot;, &quot;Gambe e capacità strutturale&quot;, [[&quot;SC-010&quot;, &quot;5×8–12&quot;], [&quot;SC-009&quot;, &quot;3×10–15&quot;], [&quot;SC-013&quot;, &quot;4×10–15&quot;], [&quot;SC-014&quot;, &quot;3×15–20&quot;], [&quot;SC-024&quot;, &quot;4×10–15&quot;], [&quot;SC-012&quot;, &quot;3×10/lato&quot;]]]], &quot;THE ARENA&quot;: [[&quot;ARENA 1 · PULL-UP FOUNDATION&quot;, &quot;Da hang attivo a 10 trazioni&quot;, [[&quot;SC-A06&quot;, &quot;3×20–40s&quot;], [&quot;SC-A07&quot;, &quot;4×6–10&quot;], [&quot;SC-A04&quot;, &quot;4×8–15&quot;], [&quot;SC-A03&quot;, &quot;5 serie tecniche&quot;], [&quot;SC-A01&quot;, &quot;serie submassimali&quot;], [&quot;SC-A08&quot;, &quot;3×8–15&quot;]]], [&quot;ARENA 2 · CHEST-TO-BAR PATH&quot;, &quot;Trazione esplosiva e altezza&quot;, [[&quot;SC-A07&quot;, &quot;3×8&quot;], [&quot;SC-A01&quot;, &quot;4×5–8&quot;], [&quot;SC-A11&quot;, &quot;6×2–4&quot;], [&quot;SC-A05&quot;, &quot;4×6–10&quot;], [&quot;SC-A09&quot;, &quot;3×6–12&quot;], [&quot;SC-A06&quot;, &quot;2×max tecnico&quot;]]], [&quot;ARENA 3 · MUSCLE-UP PREP&quot;, &quot;Prerequisiti e transizione&quot;, [[&quot;SC-A11&quot;, &quot;5×3–5&quot;], [&quot;SC-A05&quot;, &quot;5×5–8&quot;], [&quot;SC-A12&quot;, &quot;drill assistiti 6×2–3&quot;], [&quot;SC-A10&quot;, &quot;4×6–10&quot;], [&quot;SC-A13&quot;, &quot;5×10–20s&quot;], [&quot;SC-A06&quot;, &quot;grip 3×max&quot;]]], [&quot;ARENA 4 · SKILL CONTROL&quot;, &quot;Core e leve&quot;, [[&quot;SC-A08&quot;, &quot;3×10–15&quot;], [&quot;SC-A09&quot;, &quot;4×6–12&quot;], [&quot;SC-A10&quot;, &quot;4×5–8&quot;], [&quot;SC-A13&quot;, &quot;5×10–20s&quot;], [&quot;SC-A14&quot;, &quot;6×8–15s&quot;], [&quot;SC-A06&quot;, &quot;2×30–45s&quot;]]]]};let Z=&#x27;ALL&#x27;,C=&#x27;SC-001&#x27;;const $=s=&gt;document.querySelector(s);function F(){let q=($(&#x27;#search&#x27;).value||&#x27;&#x27;).toLowerCase();return E.filter(e=&gt;(Z===&#x27;ALL&#x27;||e[1]===Z)&amp;&amp;e.join(&#x27; &#x27;).toLowerCase().includes(q))}function list(){$(&#x27;#exlist&#x27;).innerHTML=F().map(e=&gt;`&lt;div class=&#x27;ex ${e[0]===C?&#x27;active&#x27;:&#x27;&#x27;}&#x27; data-id=&#x27;${e[0]}&#x27;&gt;&lt;b&gt;${e[0]}&lt;/b&gt;&lt;span&gt;${e[2]}&lt;/span&gt;&lt;/div&gt;`).join(&#x27;&#x27;);document.querySelectorAll(&#x27;.ex&#x27;).forEach(x=&gt;x.onclick=()=&gt;detail(x.dataset.id))}function view(v){[&#x27;dash&#x27;,&#x27;plans&#x27;,&#x27;catalog&#x27;,&#x27;detail&#x27;].forEach(x=&gt;$(&#x27;#&#x27;+x+&#x27;View&#x27;).classList.toggle(&#x27;hidden&#x27;,x!==v));document.querySelectorAll(&#x27;.nav&#x27;).forEach(n=&gt;n.classList.toggle(&#x27;active&#x27;,n.dataset.v===v));if(v===&#x27;plans&#x27;)plans();if(v===&#x27;catalog&#x27;)catalog()}function detail(id){let e=E.find(x=&gt;x[0]===id)||E[0];C=e[0];$(&#x27;#code&#x27;).textContent=e[0];$(&#x27;#name&#x27;).textContent=e[2];$(&#x27;#real&#x27;).textContent=e[3];$(&#x27;#cat&#x27;).textContent=e[4];$(&#x27;#zb&#x27;).textContent=e[1];$(&#x27;#mission&#x27;).textContent=e[7];$(&#x27;#mission2&#x27;).textContent=e[7];$(&#x27;#muscles&#x27;).textContent=e[6];window.__pendingMuscles=e[6];if(window.renderMuscleMap)window.renderMuscleMap(e[6]);$(&#x27;#setup&#x27;).textContent=e[8];$(&#x27;#errors&#x27;).textContent=e[9];$(&#x27;#video&#x27;).href=e[10];$(&#x27;#score&#x27;).textContent=e[5];$(&#x27;#ring&#x27;).style.background=`conic-gradient(var(--o) 0 ${e[5]}%,#1d2228 ${e[5]}% 100%)`;$(&#x27;#scoreA&#x27;).textContent=e[5]+&#x27;/100&#x27;;$(&#x27;#scoreB&#x27;).textContent=Math.max(70,e[5]-2)+&#x27;/100&#x27;;$(&#x27;#scoreC&#x27;).textContent=Math.max(70,e[5]-5)+&#x27;/100&#x27;;$(&#x27;#scoreD&#x27;).textContent=Math.max(70,e[5]-1)+&#x27;/100&#x27;;list();view(&#x27;detail&#x27;)}function catalog(){$(&#x27;#cg&#x27;).innerHTML=F().map(e=&gt;`&lt;article class=&#x27;cc&#x27; data-id=&#x27;${e[0]}&#x27;&gt;&lt;div class=&#x27;id&#x27;&gt;${e[0]} · ${e[1]}&lt;/div&gt;&lt;h4&gt;${e[2]}&lt;/h4&gt;&lt;p&gt;${e[3]}&lt;/p&gt;&lt;div class=&#x27;score&#x27;&gt;${e[5]}&lt;small&gt;/100&lt;/small&gt;&lt;/div&gt;&lt;p&gt;${e[7]}&lt;/p&gt;&lt;/article&gt;`).join(&#x27;&#x27;);document.querySelectorAll(&#x27;.cc&#x27;).forEach(x=&gt;x.onclick=()=&gt;detail(x.dataset.id))}function plans(){let zs=Z===&#x27;ALL&#x27;?[&#x27;THE LAB&#x27;,&#x27;THE FORGE&#x27;,&#x27;THE ARENA&#x27;]:[Z];$(&#x27;#pc&#x27;).innerHTML=zs.map(z=&gt;`&lt;div class=&#x27;zonehero&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;${z}&lt;/div&gt;&lt;h2 class=&#x27;title&#x27;&gt;${z}&lt;/h2&gt;&lt;div class=&#x27;plans&#x27;&gt;${P[z].map(p=&gt;`&lt;article class=&#x27;plan&#x27;&gt;&lt;h3&gt;${p[0]}&lt;/h3&gt;&lt;div class=&#x27;goal&#x27;&gt;${p[1]}&lt;/div&gt;${p[2].map(i=&gt;{let e=E.find(x=&gt;x[0]===i[0]);return `&lt;div class=&#x27;row&#x27; data-id=&#x27;${i[0]}&#x27; title=&#x27;Apri scheda ${i[0]}&#x27;&gt;&lt;span&gt;&lt;b&gt;${i[0]}&lt;/b&gt;&lt;br&gt;${e?e[2]:i[0]}&lt;/span&gt;&lt;span&gt;${i[1]}&lt;/span&gt;&lt;/div&gt;`}).join(&#x27;&#x27;)}&lt;/article&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
+ document.querySelectorAll(&quot;#pc .row[data-id]&quot;).forEach(r=&gt;{
+   r.onclick=()=&gt;detail(r.dataset.id);
+ });
+}function dash(){
+ $(&#x27;#dz&#x27;).innerHTML=[&#x27;THE LAB&#x27;,&#x27;THE FORGE&#x27;,&#x27;THE ARENA&#x27;].map(z=&gt;`&lt;article class=&#x27;plan zone-dashboard-card&#x27; data-zone=&#x27;${z}&#x27;&gt;&lt;div class=&#x27;code&#x27;&gt;${z}&lt;/div&gt;&lt;h3 style=&#x27;font-size:20px&#x27;&gt;${E.filter(e=&gt;e[1]===z).length} ESERCIZI&lt;/h3&gt;&lt;div class=&#x27;goal&#x27;&gt;${P[z].length} piani operativi&lt;/div&gt;&lt;div class=&#x27;btn&#x27; style=&#x27;margin-top:12px&#x27;&gt;APRI ${z}&lt;/div&gt;&lt;/article&gt;`).join(&#x27;&#x27;);
+ document.querySelectorAll(&#x27;.zone-dashboard-card&#x27;).forEach(card=&gt;card.onclick=()=&gt;{
+   Z=card.dataset.zone;
+   document.querySelectorAll(&#x27;.zone&#x27;).forEach(x=&gt;x.classList.toggle(&#x27;active&#x27;,x.dataset.z===Z));
+   list();
+   plans();
+   view(&#x27;plans&#x27;);
+ });
+}document.querySelectorAll(&#x27;.nav&#x27;).forEach(n=&gt;n.onclick=()=&gt;{
+  const target=n.dataset.v;
+  if(target===&#x27;detail&#x27;){
+    detail(C || (F()[0] &amp;&amp; F()[0][0]) || E[0][0]);
+  }else{
+    view(target);
+  }
+});document.querySelectorAll(&#x27;.zone&#x27;).forEach(z=&gt;z.onclick=()=&gt;{
+  Z=z.dataset.z;
+  document.querySelectorAll(&#x27;.zone&#x27;).forEach(x=&gt;x.classList.toggle(&#x27;active&#x27;,x===z));
+  list();
+  catalog();
+  if(Z===&#x27;ALL&#x27;){
+    dash();
+    view(&#x27;dash&#x27;);
+  }else{
+    plans();
+    view(&#x27;plans&#x27;);
+  }
+});$(&#x27;#search&#x27;).oninput=()=&gt;{list();catalog()};
+
+
+
+
+
+
+// Avvio applicazione dopo il caricamento di tutte le funzioni e delle mappe anatomiche.
+$(&#x27;#kex&#x27;).textContent=E.length;
+$(&#x27;#kpl&#x27;).textContent=Object.values(P).reduce((a,b)=&gt;a+b.length,0);
+dash();
+list();
+plans();
+catalog();
+detail(C);
+view(&#x27;dash&#x27;);
+
+&lt;/script&gt;
+&lt;script type=&quot;module&quot;&gt;
+import React from &quot;https://esm.sh/react@18.3.1&quot;;
+import { createRoot } from &quot;https://esm.sh/react-dom@18.3.1/client&quot;;
+import Body from &quot;https://esm.sh/react-muscle-highlighter@latest?deps=react@18.3.1&quot;;
+
+const frontEl = document.getElementById(&quot;muscleFrontMount&quot;);
+const backEl = document.getElementById(&quot;muscleBackMount&quot;);
+const statusEl = document.getElementById(&quot;anatomyStatus&quot;);
+
+const frontRoot = createRoot(frontEl);
+const backRoot = createRoot(backEl);
+
+const slugRules = [
+  [&quot;pettorale&quot;, &quot;chest&quot;],
+  [&quot;petto&quot;, &quot;chest&quot;],
+  [&quot;deltoide&quot;, &quot;deltoids&quot;],
+  [&quot;deltoidi&quot;, &quot;deltoids&quot;],
+  [&quot;spalla&quot;, &quot;deltoids&quot;],
+  [&quot;bicipite&quot;, &quot;biceps&quot;],
+  [&quot;bicipiti&quot;, &quot;biceps&quot;],
+  [&quot;brachiale&quot;, &quot;biceps&quot;],
+  [&quot;tricipite&quot;, &quot;triceps&quot;],
+  [&quot;tricipiti&quot;, &quot;triceps&quot;],
+  [&quot;avambraccio&quot;, &quot;forearm&quot;],
+  [&quot;avambracci&quot;, &quot;forearm&quot;],
+  [&quot;grip&quot;, &quot;forearm&quot;],
+  [&quot;addominali&quot;, &quot;abs&quot;],
+  [&quot;retto addominale&quot;, &quot;abs&quot;],
+  [&quot;core&quot;, &quot;abs&quot;],
+  [&quot;obliqui&quot;, &quot;obliques&quot;],
+  [&quot;gran dorsale&quot;, &quot;upper-back&quot;],
+  [&quot;dorsali&quot;, &quot;upper-back&quot;],
+  [&quot;grande rotondo&quot;, &quot;upper-back&quot;],
+  [&quot;romboidi&quot;, &quot;upper-back&quot;],
+  [&quot;trapezio&quot;, &quot;trapezius&quot;],
+  [&quot;lombari&quot;, &quot;lower-back&quot;],
+  [&quot;gluteo&quot;, &quot;gluteal&quot;],
+  [&quot;glutei&quot;, &quot;gluteal&quot;],
+  [&quot;quadricipite&quot;, &quot;quadriceps&quot;],
+  [&quot;quadricipiti&quot;, &quot;quadriceps&quot;],
+  [&quot;quadricipiti&quot;, &quot;quadriceps&quot;],
+  [&quot;femorali&quot;, &quot;hamstring&quot;],
+  [&quot;hamstring&quot;, &quot;hamstring&quot;],
+  [&quot;polpaccio&quot;, &quot;calves&quot;],
+  [&quot;polpacci&quot;, &quot;calves&quot;],
+  [&quot;tibiale&quot;, &quot;tibialis&quot;],
+  [&quot;adduttori&quot;, &quot;adductors&quot;]
+];
+
+function muscleData(text){
+  const normalized = String(text || &quot;&quot;).toLowerCase();
+  const names = normalized.split(&quot;,&quot;).map(x=&gt;x.trim()).filter(Boolean);
+  const ranks = new Map();
+
+  if(normalized.includes(&quot;full body&quot;) || normalized.includes(&quot;corpo intero&quot;)){
+    [
+      &quot;chest&quot;,&quot;deltoids&quot;,&quot;biceps&quot;,&quot;triceps&quot;,&quot;forearm&quot;,
+      &quot;upper-back&quot;,&quot;trapezius&quot;,&quot;abs&quot;,&quot;obliques&quot;,
+      &quot;gluteal&quot;,&quot;quadriceps&quot;,&quot;hamstring&quot;,&quot;calves&quot;
+    ].forEach((slug,index)=&gt;ranks.set(slug,index&lt;8?1:2));
+  }
+
+  names.forEach((name, index)=&gt;{
+    slugRules.forEach(([term, slug])=&gt;{
+      if(name.includes(term)){
+        const current = ranks.get(slug);
+        const intensity = index === 0 ? 1 : 2;
+        if(!current || intensity &lt; current) ranks.set(slug, intensity);
+      }
+    });
+  });
+
+  return Array.from(ranks, ([slug, intensity])=&gt;({
+    slug,
+    color: intensity === 1 ? &quot;#ff7800&quot; : &quot;#ffb15a&quot;,
+    styles:{
+      fill:intensity === 1 ? &quot;#ff7800&quot; : &quot;#ffb15a&quot;,
+      stroke:&quot;#ff9a32&quot;,
+      strokeWidth:1.4
+    }
+  }));
+}
+
+window.renderMuscleMap = function(text){
+  const data = muscleData(text);
+  const common = {
+    data,
+    gender:&quot;male&quot;,
+    scale:0.75,
+    colors:[&quot;#ff7800&quot;,&quot;#ffb15a&quot;],
+    defaultFill:&quot;#171b20&quot;,
+    defaultStroke:&quot;#69727d&quot;,
+    defaultStrokeWidth:1.2,
+    border:&quot;#8d96a0&quot;
+  };
+
+  frontRoot.render(React.createElement(Body,{...common,side:&quot;front&quot;}));
+  backRoot.render(React.createElement(Body,{...common,side:&quot;back&quot;}));
+
+  statusEl.textContent = data.length
+    ? &quot;MAPPA SVG SEGMENTATA ATTIVA&quot;
+    : &quot;NESSUN GRUPPO MUSCOLARE ASSOCIATO&quot;;
+  statusEl.className = &quot;anatomy-status ready&quot;;
+};
+
+window.renderMuscleMap(window.__pendingMuscles || &quot;gran dorsale, grande rotondo, bicipite&quot;);
+window.addEventListener(&quot;message&quot;,ev=&gt;{
+  const d=ev.data||{};
+  if(d.type===&quot;open-exercise&quot; &amp;&amp; d.code &amp;&amp; typeof detail===&quot;function&quot;){
+    detail(d.code);
+    window.scrollTo({top:0,behavior:&quot;smooth&quot;});
+  }
+});
+&lt;/script&gt;
+
+&lt;/body&gt;&lt;/html&gt;"></iframe>
+</div>
+<div id="toast" class="link-toast">Scheda tecnica aperta</div>
+<script>
+const tabs=[...document.querySelectorAll(".tab")];
+const frames=[...document.querySelectorAll("iframe")];
+function showFrame(id){
+  tabs.forEach(t=>t.classList.toggle("active",t.dataset.target===id));
+  frames.forEach(f=>f.classList.toggle("active",f.id===id));
+}
+tabs.forEach(t=>t.onclick=()=>showFrame(t.dataset.target));
+window.addEventListener("message",ev=>{
+  const d=ev.data||{};
+  if(d.type==="open-doc"){
+    showFrame("docsFrame");
+    const docs=document.getElementById("docsFrame");
+    const send=()=>docs.contentWindow.postMessage({type:"open-exercise",code:d.code},"*");
+    if(docs.contentDocument?.readyState==="complete") send();
+    else docs.addEventListener("load",send,{once:true});
+    const toast=document.getElementById("toast");
+    toast.textContent=`Aperta la scheda ${d.code}`;
+    toast.classList.add("show");
+    setTimeout(()=>toast.classList.remove("show"),1800);
+  }
+});
+</script>
+</body>
+</html>
