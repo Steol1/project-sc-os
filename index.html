@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#070707">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>PROJECT SC OS 4.1 RC1</title>
+<style>
+:root{--bg:#070707;--card:#151515;--line:#2a2a2a;--text:#f5f5f5;--muted:#999;--o:#ff6a00;--ok:#35d07f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{position:sticky;top:0;z-index:5;background:#090909eF;backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:16px}
+.brand{font-weight:950;letter-spacing:.12em}.ver{font-size:11px;color:var(--o);font-weight:850;margin-top:3px}
+main{max-width:760px;margin:auto;padding:18px 14px 108px}.k{font-size:12px;color:var(--o);font-weight:900;letter-spacing:.14em}
+h1{font-size:34px;line-height:1;margin:8px 0 10px;letter-spacing:-.04em}h2{margin:0 0 6px}p,.small{color:var(--muted)}
+.card{background:linear-gradient(#181818,#111);border:1px solid var(--line);border-radius:22px;padding:18px;margin:14px 0}
+.hero{background:radial-gradient(circle at 100% 0,#ff6a0040,transparent 38%),linear-gradient(#191919,#101010)}
+.badge{display:inline-block;border:1px solid #6b310d;background:#251307;color:#ffb17c;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:900}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.meta span{border:1px solid var(--line);border-radius:12px;padding:8px 10px;color:#ccc;font-size:12px}
+.btn{width:100%;min-height:54px;border:0;border-radius:16px;font-weight:950;letter-spacing:.04em}
+.primary{background:linear-gradient(135deg,var(--o),#ff963f);color:#080808}.secondary{background:#1b1b1b;color:white;border:1px solid #373737}.danger{background:#28110f;color:#ff938d;border:1px solid #5b211c}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{background:#0d0d0d;border:1px solid var(--line);border-radius:15px;padding:11px}.stat b{display:block;font-size:20px}.stat span{font-size:10px;color:var(--muted);text-transform:uppercase}
+.progress{height:8px;background:#252525;border-radius:99px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--o),#ffa15c)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.field{background:#0b0b0b;border:1px solid #333;border-radius:17px;padding:11px}.field label{display:block;font-size:10px;color:var(--muted);font-weight:850}.field input{width:100%;border:0;outline:0;background:transparent;color:white;font-size:30px;font-weight:950}
+.rpe{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:10px 0 14px}.rpe button{padding:12px 0;border-radius:13px;border:1px solid #333;background:#101010;color:#aaa;font-weight:900}.rpe button.on{background:var(--o);color:#050505;border-color:var(--o)}
+.row{display:grid;grid-template-columns:32px 1fr 1fr 1fr 30px;gap:5px;padding:10px 0;border-top:1px solid #252525;font-size:13px}.check{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#153523;color:var(--ok)}
+nav{position:fixed;bottom:0;left:0;right:0;background:#090909f2;backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 6px calc(7px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);z-index:6}
+nav button{background:none;border:0;color:#777;font-size:10px;font-weight:850;padding:7px 2px}nav button.on{color:var(--o)}nav b{display:block;font-size:20px;margin-bottom:2px}
+.timer{position:fixed;bottom:87px;left:50%;transform:translateX(-50%);width:min(730px,calc(100% - 22px));z-index:7;background:#1a120d;border:1px solid #66310e;border-radius:18px;padding:11px 14px;display:flex;justify-content:space-between;align-items:center}.timer strong{color:var(--o);font-size:25px}
+@media(max-width:520px){.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="brand">PROJECT SC OS</div><div class="ver">4.1.0 RC1 · BUILD 001F · INPUT FIX</div></header>
+<main id="app"></main>
+<nav id="nav"></nav>
+<script>
+const EX=[
+{id:"SC-0001",name:"THE BUILDER",base:"Chest Press",sets:4,reps:"6-10",rest:90,kg:60},
+{id:"SC-0002",name:"THE COBRA",base:"Lat Machine",sets:4,reps:"6-10",rest:90,kg:55},
+{id:"SC-0003",name:"THE CAP",base:"Shoulder Press",sets:3,reps:"8-12",rest:90,kg:32.5},
+{id:"SC-0004",name:"THE SPIDER",base:"Spider Curl EZ",sets:3,reps:"8-12",rest:75,kg:21.5},
+{id:"SC-0005",name:"THE ROPE",base:"Estensioni tricipiti",sets:3,reps:"10-15",rest:75,kg:25},
+{id:"SC-0006",name:"THE PLATFORM",base:"Leg Press",sets:4,reps:"8-12",rest:120,kg:120}
+];
+const PROGRAMS=[
+{id:"lab-b",name:"THE LAB B",sub:"PULL CONTROL",mins:82,ids:["SC-0002","SC-0001","SC-0003","SC-0004","SC-0005","SC-0006"]},
+{id:"lab-a",name:"THE LAB A",sub:"PUSH ENGINE",mins:76,ids:["SC-0001","SC-0003","SC-0005","SC-0002","SC-0004"]}
+];
+const K={prog:"sc_prog",session:"sc_session",history:"sc_history"};
+const get=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let route=location.hash.slice(1)||"home",rpe=8,tick;
+const app=document.getElementById("app"), nav=document.getElementById("nav");
+const fmt=s=>{s=Math.max(0,Math.floor(s));return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")};
+const vol=n=>Math.round(n).toLocaleString("it-IT");
+function go(r){location.hash=r}
+function selectRpe(v){
+  rpe=v;
+  document.querySelectorAll('.rpe button').forEach(b=>{
+    b.classList.toggle('on', Number(b.textContent)===v);
+  });
+  saveDraft();
+}
+function saveDraft(){
+  const s=get(K.session,null);
+  if(!s)return;
+  const kg=document.getElementById('kg');
+  const reps=document.getElementById('reps');
+  if(!kg||!reps)return;
+  s.draft={exerciseId:s.ex[s.i].id,kg:kg.value,reps:reps.value,rpe:rpe};
+  set(K.session,s);
+}addEventListener("hashchange",()=>{route=location.hash.slice(1)||"home";render()});
+function navRender(){nav.innerHTML=[["home","⌂","HOME"],["workout","▶","WORKOUT"],["programs","▦","PROGRAMMI"],["history","◷","STORICO"],["settings","⚙","SETTINGS"]].map(x=>`<button class="${route==x[0]?"on":""}" onclick="go('${x[0]}')"><b>${x[1]}</b>${x[2]}</button>`).join("")}
+function activeProgram(){return PROGRAMS.find(p=>p.id==get(K.prog,"lab-b"))||PROGRAMS[0]}
+function start(){const p=activeProgram();const s={id:"W"+Date.now(),program:p.name,sub:p.sub,start:Date.now(),i:0,volume:0,totalSets:0,totalReps:0,status:"RUNNING",timerEnd:0,ex:p.ids.map(id=>({...EX.find(e=>e.id==id),done:[]}))};set(K.session,s);go("workout")}
+function saveSet(){
+ let s=get(K.session,null),e=s.ex[s.i],kg=+document.getElementById("kg").value,reps=+document.getElementById("reps").value;
+ if(!kg||!reps)return alert("Inserisci kg e ripetizioni");
+ e.done.push({kg,reps,rpe,at:Date.now()});delete s.draft;s.volume+=kg*reps;s.totalSets++;s.totalReps+=reps;s.timerEnd=Date.now()+e.rest*1000;
+ if(e.done.length>=e.sets){if(s.i<s.ex.length-1)s.i++;else s.status="READY"}
+ set(K.session,s);render()
+}
+function finish(){let s=get(K.session,null);s.end=Date.now();s.status="COMPLETED";let h=get(K.history,[]);h.unshift(s);set(K.history,h);localStorage.removeItem(K.session);summary(s)}
+function home(){
+ const p=activeProgram(),s=get(K.session,null),h=get(K.history,[])[0];
+ app.innerHTML=`<div class="k">OGGI</div><h1>${s?"SESSIONE IN CORSO":"READY TO TRAIN"}</h1><p>${s?"La sessione è salvata. Safari può pure fare Safari.":"Il programma attivo è pronto."}</p>
+ <section class="card hero"><span class="badge">${s?"● LIVE":"PROGRAMMA ATTIVO"}</span><h2 style="margin-top:14px">${s?s.program:p.name}</h2><div class="small">${s?s.sub:p.sub}</div>
+ <div class="meta"><span>⏱ ${s?fmt((Date.now()-s.start)/1000):p.mins+" min"}</span><span>▦ ${s?s.totalSets:p.ids.length+" esercizi"}</span><span>◈ ${s?vol(s.volume)+" kg":"AutoSave"}</span></div>
+ <button class="btn primary" onclick="${s?"go('workout')":"start()"}">${s?"CONTINUA WORKOUT":"INIZIA WORKOUT"}</button></section>
+ <div class="stats"><div class="stat"><b>${h?vol(h.volume):0}</b><span>Ultimo volume</span></div><div class="stat"><b>${h?h.totalSets:0}</b><span>Serie</span></div><div class="stat"><b>${h?h.totalReps:0}</b><span>Reps</span></div><div class="stat"><b>${h?fmt((h.end-h.start)/1000):"--:--"}</b><span>Durata</span></div></div>`
+}
+function workout(){
+ const s=get(K.session,null);if(!s){app.innerHTML=`<section class="card"><h2>Nessun workout attivo</h2><button class="btn primary" onclick="go('home')">TORNA ALLA HOME</button></section>`;return}
+ const e=s.ex[s.i],done=e.done.length,pr=((s.i+done/e.sets)/s.ex.length)*100;
+ app.innerHTML=`<div class="stats"><div class="stat"><b id="elapsed">${fmt((Date.now()-s.start)/1000)}</b><span>Tempo</span></div><div class="stat"><b>${vol(s.volume)}</b><span>Volume</span></div><div class="stat"><b>${s.totalSets}</b><span>Serie</span></div><div class="stat"><b>${s.totalReps}</b><span>Reps</span></div></div>
+ <section class="card"><div class="k">${e.id}</div><h1>${e.name}</h1><div class="small">${e.base} · ${e.sets} × ${e.reps} · recupero ${e.rest}"</div><div class="progress" style="margin:16px 0"><i style="width:${pr}%"></i></div>
+ ${s.status=="READY"?`<button class="btn primary" onclick="finish()">TERMINA WORKOUT</button>`:`<div class="small">SET ${done+1} DI ${e.sets}</div><div class="form"><div class="field"><label>KG</label><input id="kg" type="number" inputmode="decimal" step=".5" value="${s.draft?.exerciseId===e.id?s.draft.kg:e.kg}" oninput="saveDraft()"></div><div class="field"><label>REPS</label><input id="reps" type="number" inputmode="numeric" value="${s.draft?.exerciseId===e.id?s.draft.reps:8}" oninput="saveDraft()"></div></div><div class="small" style="margin-top:12px">RPE</div><div class="rpe">${[6,7,8,9,10].map(v=>`<button class="${rpe==v?"on":""}" onclick="selectRpe(${v})">${v}</button>`).join("")}</div><button class="btn primary" onclick="saveSet()">✓ COMPLETA SET</button>`}
+ <div style="margin-top:16px"><div class="small">SERIE COMPLETATE</div>${e.done.length?e.done.map((x,i)=>`<div class="row"><b>${i+1}</b><span>${x.kg} kg</span><span>${x.reps} reps</span><span>RPE ${x.rpe}</span><span class="check">✓</span></div>`).join(""):"<p>Nessuna serie completata.</p>"}</div></section>
+ <button class="btn danger" onclick="if(confirm('Annullare la sessione?')){localStorage.removeItem(K.session);go('home')}">ANNULLA SESSIONE</button>
+ ${s.timerEnd>Date.now()?`<div class="timer"><div><div class="small">RECUPERO</div><strong id="timer">${fmt((s.timerEnd-Date.now())/1000)}</strong></div><button class="btn secondary" style="width:auto" onclick="let q=get(K.session,null);q.timerEnd=0;set(K.session,q);render()">SALTA</button></div>`:""}`
+}
+function programs(){let a=get(K.prog,"lab-b");app.innerHTML=`<div class="k">PROGRAMMI</div><h1>SCEGLI IL MOTORE</h1>${PROGRAMS.map(p=>`<section class="card"><span class="badge">${a==p.id?"ACTIVE":"PROGRAMMA"}</span><h2 style="margin-top:12px">${p.name}</h2><div class="small">${p.sub}</div><div class="meta"><span>${p.ids.length} esercizi</span><span>${p.mins} min</span></div><button class="btn ${a==p.id?"secondary":"primary"}" onclick="set(K.prog,'${p.id}');render()">${a==p.id?"PROGRAMMA ATTIVO":"IMPOSTA ATTIVO"}</button></section>`).join("")}`}
+function history(){let h=get(K.history,[]);app.innerHTML=`<div class="k">STORICO</div><h1>SESSIONI</h1>${h.length?h.map(s=>`<section class="card"><h2>${s.program}</h2><div class="small">${new Date(s.end).toLocaleString("it-IT")}</div><div class="stats" style="margin-top:14px"><div class="stat"><b>${vol(s.volume)}</b><span>Volume</span></div><div class="stat"><b>${s.totalSets}</b><span>Serie</span></div><div class="stat"><b>${s.totalReps}</b><span>Reps</span></div><div class="stat"><b>${fmt((s.end-s.start)/1000)}</b><span>Durata</span></div></div></section>`).join(""):"<p>Nessuna sessione completata.</p>"}`}
+function settings(){app.innerHTML=`<div class="k">SETTINGS</div><h1>SISTEMA</h1><section class="card"><h2>BUILD 001F · INPUT FIX</h2><p>Workout Engine, sessione persistente, AutoSave e storico locale.</p><button class="btn danger" onclick="if(confirm('Cancellare tutti i dati?')){localStorage.clear();go('home')}">AZZERA DATI LOCALI</button></section>`}
+function summary(s){app.innerHTML=`<section class="card" style="text-align:center"><div class="k">WORKOUT COMPLETATO</div><h1 style="font-size:54px">${vol(s.volume)}</h1><div class="small">KG DI VOLUME</div><div class="stats" style="margin-top:20px"><div class="stat"><b>${fmt((s.end-s.start)/1000)}</b><span>Durata</span></div><div class="stat"><b>${s.totalSets}</b><span>Serie</span></div><div class="stat"><b>${s.totalReps}</b><span>Reps</span></div><div class="stat"><b>${s.ex.length}</b><span>Esercizi</span></div></div><button class="btn primary" style="margin-top:18px" onclick="go('home')">TORNA ALLA HOME</button></section>`}
+function render(){clearInterval(tick);navRender();({home,workout,programs,history,settings}[route]||home)();if(route=="workout")tick=setInterval(()=>{let s=get(K.session,null);if(!s)return;let e=document.getElementById("elapsed");if(e)e.textContent=fmt((Date.now()-s.start)/1000);let t=document.getElementById("timer");if(t){let left=(s.timerEnd-Date.now())/1000;t.textContent=fmt(left);if(left<=0)render()}},1000)}
+render()
+</script>
+</body></html>
