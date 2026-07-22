@@ -1,8 +1,10 @@
 # CHANGELOG
 
-## 4.3.1 RC1 · BUILD 004F
-- Corretto il disallineamento grafico dell'Atlante incorporato.
-- Eliminata la doppia intestazione del vecchio Atlante.
-- Migliorati spaziature, card, griglie e resa mobile.
-- Corretto il collegamento MuscleWiki di THE COBRA / Vertical Traction.
-- Aggiornata la cache PWA per forzare il caricamento della correzione.
+## 4.4.0 RC1 · BUILD 005 · COACH ENGINE
+- Introdotto Training Plan con modalità AUTO / GOAL / MANUAL.
+- Aggiunta calendarizzazione su 2, 3 o 4 sedute settimanali.
+- Aggiunto motore di raccomandazione del prossimo programma.
+- Aggiunto avanzamento automatico del ciclo.
+- Aggiunta cronologia completa delle versioni PROJECT SC OS.
+- Separati storico workout, totali e timeline del progetto.
+- Nessuna funzione precedente rimossa.

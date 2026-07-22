@@ -1,10 +1,14 @@
-# PROJECT SC OS 4.3.1 RC1
-## BUILD 004F · ATLAS & LINK FIX
+# PROJECT SC OS 4.4.0 RC1
+## BUILD 005 · COACH ENGINE
 
-Correzioni:
-- Atlante incorporato riallineato allo stile e alle dimensioni della app.
-- Rimossi header e menu duplicati dentro l'Atlante.
-- Layout responsive ottimizzato per iPhone.
-- THE COBRA / Vertical Traction non apre più il video del Neutral Pulldown.
-- Collegamento THE COBRA riportato alla selezione MuscleWiki delle macchine per dorsali.
-- Memory Engine, programmi, storico e PWA invariati.
+Nuovo:
+- modalità AUTO, GOAL e MANUAL;
+- obiettivi ipertrofia, forza, dimagrimento, muscle-up e mantenimento;
+- frequenza configurabile 2, 3 o 4 sedute;
+- prossimo workout consigliato;
+- calendario settimanale;
+- avanzamento automatico del ciclo dopo ogni seduta completata;
+- storico separato tra workout, totali e storia completa delle build PROJECT SC OS.
+
+Conservato:
+Memory Engine, 10 programmi, Atlante anatomico, MuscleWiki, timer, PWA e storico locale.
