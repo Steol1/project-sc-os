@@ -1,8 +1,9 @@
 # Changelog
 
-## 4.2.0 RC1 - BUILD 003
-- Memory Engine per singolo esercizio e singolo set
-- Ripristinati tutti i percorsi THE LAB, THE FORGE e THE ARENA della v3.1
-- Ripristinato Atlante completo
-- Rimossa la necessità del pulsante USE LAST
-- Aggiunta migrazione dello storico precedente
+## 4.3.0 RC1 — Build 004 FUSION
+- Ripristinato integralmente l'Atlante anatomico v2.1.
+- Ripristinati corpo umano fronte/retro e muscoli cliccabili.
+- Ripristinati i link MuscleWiki nelle schede esercizio.
+- Aggiunto accesso MuscleWiki direttamente durante il workout.
+- Conservato il Memory Engine della Build 003.
+- Aggiornata la cache PWA per includere l'Atlante offline.

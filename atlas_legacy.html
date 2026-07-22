@@ -1,0 +1,387 @@
+<!doctype html><html lang='it'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>PROJECT SC OS</title>
+<style>
+:root{--bg:#050607;--p:#0b0d10;--p2:#111419;--l:#292e35;--t:#f2f4f6;--m:#9299a3;--o:#ff7800;--r:#e34c4c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font-family:Inter,Segoe UI,Arial}header{height:68px;position:sticky;top:0;z-index:20;display:grid;grid-template-columns:310px 1fr auto;align-items:center;background:#050607f2;border-bottom:1px solid var(--l)}.brand{display:flex;align-items:center;gap:14px;padding:0 18px;border-right:1px solid var(--l);height:68px}.shield{width:46px}.brand b{letter-spacing:.18em}.brand small{display:block;color:var(--m);font-size:9px;letter-spacing:.16em}.crumb{padding:0 24px;color:#bac0c7;font-size:11px}.search{width:330px;margin-right:16px;background:#0c0f12;border:1px solid var(--l);border-radius:9px;color:var(--t);padding:10px}.shell{display:grid;grid-template-columns:310px 1fr}.side{position:sticky;top:68px;height:calc(100vh - 68px);overflow:auto;border-right:1px solid var(--l);padding:12px 8px}.block{border:1px solid var(--l);border-radius:9px;padding:12px;margin-bottom:9px}.bt{color:var(--o);font-size:11px;font-weight:800;margin:2px 7px 10px}.nav,.zone,.ex{cursor:pointer}.nav{padding:11px;border-left:3px solid transparent;font-size:11px}.nav.active{color:var(--o);border-left-color:var(--o);background:linear-gradient(90deg,#ff78002b,transparent)}.nav small{display:block;color:var(--m);font-size:9px}.zone{padding:10px;border:1px solid var(--l);border-radius:8px;margin:7px 0;font-size:11px}.zone.active{border-color:var(--o)}.zone small{display:block;color:var(--m);font-size:9px}.ex{padding:8px;border-radius:7px}.ex:hover,.ex.active{background:#11151a}.ex b{font-size:9px;color:var(--o)}.ex span{display:block;font-size:10px}.view{padding:26px}.hero{display:grid;grid-template-columns:1.05fr .85fr .8fr;gap:16px;padding:30px 28px;background:radial-gradient(circle at 80% 14%,#ff780012,transparent 24%)}.hero h1{font-size:64px;line-height:.9;margin:5px 0}.code{color:var(--o);font-weight:800}.real{color:#bbc0c7;letter-spacing:.1em}.badge{display:inline-block;border:1px solid var(--l);padding:7px 11px;border-radius:999px;font-size:10px;margin:14px 6px 14px 0}.mission{color:#c0c5cb;line-height:1.7}.btn{border:1px solid var(--o);background:var(--o);color:#08090a;padding:10px 13px;border-radius:8px;font-weight:800;font-size:10px;text-decoration:none;display:inline-block}.art,.card,.plan{border:1px solid var(--l);background:linear-gradient(180deg,#0d1013,#090b0d);border-radius:10px;padding:17px}.art{display:grid;place-items:center;color:#626a74;font-size:10px}.ring{width:125px;height:125px;border-radius:50%;display:grid;place-items:center;position:relative}.ring:before{content:'';width:98px;height:98px;border-radius:50%;background:#090b0d;position:absolute}.ring b{position:relative;font-size:44px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card h3,.plan h3{font-size:11px;letter-spacing:.08em;color:#c9cdd2}.quote{border-left:3px solid var(--o);padding:8px 11px;font-size:13px;line-height:1.55}.title{font-size:48px;margin:7px 0}.lead{color:#b7bdc4;line-height:1.7}.zonehero{padding:34px;border:1px solid var(--l);border-radius:14px;background:radial-gradient(circle at 85% 10%,#ff78001f,transparent 28%),#090b0d;margin-bottom:16px}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.goal{color:var(--m);font-size:11px;margin-bottom:12px}.row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:9px 0;border-bottom:1px solid #20252b;font-size:11px}.row b{color:var(--o);font-size:9px}.catalog{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cc{border:1px solid var(--l);background:#0a0d10;border-radius:10px;padding:15px;cursor:pointer}.cc:hover{border-color:var(--o)}.cc .id{color:var(--o);font-size:10px}.cc h4{margin:5px 0}.cc p{color:var(--m);font-size:10px;line-height:1.5}.score{font-size:24px;font-weight:800}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.kpi{border:1px solid var(--l);border-radius:10px;padding:18px}.kpi b{display:block;font-size:32px}.kpi span{font-size:10px;color:var(--m)}.hidden{display:none!important}@media(max-width:1100px){header{grid-template-columns:1fr}.crumb,.search{display:none}.shell{grid-template-columns:1fr}.side{display:none}.hero{grid-template-columns:1fr}.grid,.catalog,.plans,.kpis{grid-template-columns:1fr}.view{padding:16px}}
+
+
+.anatomy-card{padding:14px!important;display:block!important;min-height:360px}
+.anatomy-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--o);font-size:11px;letter-spacing:.08em}
+.anatomy-head span{color:var(--m);font-size:8px}
+.anatomy-image-wrap{position:relative;background:#dfe4e8;border:1px solid var(--l);border-radius:9px;overflow:hidden}
+.anatomy-image{display:block;width:100%;height:auto;filter:brightness(.86) contrast(1.08)}
+.muscle-overlay{position:absolute;inset:0;pointer-events:none}
+.muscle-zone{position:absolute;border-radius:48%;background:rgba(255,120,0,.64);border:1px solid rgba(255,191,123,.9);box-shadow:0 0 12px rgba(255,120,0,.55);mix-blend-mode:multiply}
+.muscle-zone.secondary{background:rgba(255,190,77,.46);border-color:rgba(255,220,150,.9);box-shadow:0 0 8px rgba(255,190,77,.35)}
+.muscle-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.muscle-chip{font-size:8px;border:1px solid var(--l);border-radius:999px;padding:5px 8px;color:#c9cdd2}
+.muscle-chip.primary{border-color:#ff7800;color:#ff9b41}.muscle-chip.secondary{border-color:#b57b2b;color:#e7bd74}
+.row[data-id]{cursor:pointer;transition:.18s}.row[data-id]:hover{background:rgba(255,120,0,.08);padding-left:8px;padding-right:8px;border-radius:6px}
+
+.zone-dashboard-card{cursor:pointer;transition:.2s}.zone-dashboard-card:hover{border-color:var(--o);transform:translateY(-2px)}
+#detailView .hero>div:first-child{min-height:300px}
+
+/* PROJECT SC v1.7 visual upgrade */
+header{box-shadow:0 10px 35px rgba(0,0,0,.28)}
+.view{max-width:1680px;margin:0 auto}
+.hero{grid-template-columns:1.28fr .82fr .72fr;align-items:stretch}
+.hero>div:first-child{border:1px solid var(--l);border-radius:12px;padding:22px;background:linear-gradient(180deg,#0b0d10,#080a0c)}
+.hero h1{font-size:58px;line-height:.96;margin:10px 0 12px}
+.hero .mission{max-width:700px}
+.anatomy-card{background:linear-gradient(180deg,#0c0f12,#090b0d)!important}
+.anatomy-image-wrap{background:#e2e6e9}
+.anatomy-image{filter:none!important}
+.muscle-shape{
+  fill:#ff7800!important;
+  stroke:#b94700!important;
+  stroke-width:2!important;
+  opacity:.93;
+  filter:none!important;
+  mix-blend-mode:multiply;
+}
+.muscle-shape.secondary{
+  fill:#ffad4a!important;
+  stroke:#d97706!important;
+  opacity:.78;
+}
+.muscle-chip{font-size:9px;font-weight:800;letter-spacing:.03em}
+.muscle-chip.primary{background:rgba(255,120,0,.09)}
+.muscle-chip.secondary{background:rgba(255,174,74,.07)}
+.score-card{min-height:100%;display:flex;flex-direction:column;justify-content:flex-start}
+.score-card .code{font-size:24px;margin-bottom:12px}
+.ring{width:170px;height:170px;margin-top:4px}
+.ring:before{width:132px;height:132px}
+.ring b{font-size:58px}
+.grid{grid-template-columns:repeat(3,1fr)}
+.grid .card:last-child{grid-column:span 1}
+.card{min-height:170px}
+.card h3{color:var(--o);font-size:13px}
+.quote{font-size:12px}
+.btn{box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.zone-dashboard-card{background:linear-gradient(180deg,#0e1115,#090b0d)}
+.plan-card,.plan{box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+@media(max-width:1400px){.hero{grid-template-columns:1fr 1fr}.score-card{grid-column:1/-1}.grid{grid-template-columns:repeat(2,1fr)}}
+
+
+/* PROJECT SC v1.8 — anatomy refinement */
+.anatomy-image-wrap{
+  background:#eef1f3;
+  border:1px solid #3a414a;
+  border-radius:10px;
+  overflow:hidden;
+}
+.anatomy-image{
+  display:block;
+  width:100%;
+  height:auto;
+  filter:brightness(.98) contrast(1.05)!important;
+}
+.muscle-shape{
+  fill:#ff7800!important;
+  stroke:#d95f00!important;
+  stroke-width:2.2!important;
+  opacity:.96;
+  filter:none!important;
+  mix-blend-mode:multiply;
+}
+.muscle-shape.secondary{
+  fill:#ffb25e!important;
+  stroke:#f08c22!important;
+  opacity:.82;
+}
+.muscle-legend{
+  justify-content:center;
+  margin-top:12px;
+}
+.muscle-chip{
+  padding:7px 12px;
+  font-size:9px;
+  font-weight:800;
+  border-radius:999px;
+}
+.muscle-chip.primary{
+  border-color:#ff7800;
+  color:#ff9b41;
+  background:rgba(255,120,0,.07);
+}
+.muscle-chip.secondary{
+  border-color:#d9913f;
+  color:#ffc27f;
+  background:rgba(255,178,94,.06);
+}
+.anatomy-key{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-top:10px;
+  color:var(--m);
+  font-size:9px;
+  letter-spacing:.04em;
+}
+.anatomy-key span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.anatomy-swatch{
+  width:16px;height:9px;border-radius:2px;display:inline-block;
+}
+.anatomy-swatch.primary{background:#ff7800}
+.anatomy-swatch.secondary{background:#ffb25e}
+
+
+/* v2.0 — true segmented SVG anatomy */
+.anatomy-component-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  background:#101317;
+  border:1px solid #343a42;
+  border-radius:10px;
+  padding:12px;
+  min-height:330px;
+}
+.anatomy-view{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.anatomy-view-label{
+  color:#8f98a3;
+  font-size:8px;
+  letter-spacing:.14em;
+  margin-bottom:4px;
+}
+.muscle-react-mount{
+  width:100%;
+  min-height:285px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.muscle-react-mount svg{
+  width:100%!important;
+  max-width:230px!important;
+  height:285px!important;
+  display:block;
+}
+.anatomy-status{
+  text-align:center;
+  color:#8f98a3;
+  font-size:8px;
+  letter-spacing:.08em;
+  margin-top:8px;
+}
+.anatomy-status.ready{color:#43c977}
+.anatomy-status.error{color:#e65b5b}
+.anatomy-image-wrap,.anatomy-image,.muscle-overlay{display:none!important}
+@media(max-width:650px){
+  .anatomy-component-wrap{grid-template-columns:1fr}
+}
+
+</style></head><body>
+<header><div class='brand'><svg class='shield' viewBox='0 0 80 90'><path d='M40 4 72 18v27c0 21-14 35-32 41C22 80 8 66 8 45V18Z' fill='none' stroke='#ff7800' stroke-width='4'/><path d='m40 19 13 18-9-1 12 15-16-7-16 7 12-15-9 1Z' fill='#f3f4f5'/><path d='m40 49 15 10-15 11-15-11Z' fill='#ff7800'/></svg><div><b>PROJECT SC</b><small>PERFORMANCE ENGINEERING OS</small></div></div><div class='crumb'>MANUALE · PIANI · PROGRESSIONI · REV 1.1</div><input id='search' class='search' placeholder='Cerca codice, esercizio o muscolo...'></header>
+<div class='shell'><aside class='side'><div class='block'><div class='bt'>NAVIGAZIONE</div><div class='nav active' data-v='dash'>DASHBOARD<small>Panoramica</small></div><div class='nav' data-v='plans'>PIANI PER ZONA<small>Lab, Forge, Arena</small></div><div class='nav' data-v='catalog'>ATLANTE COMPLETO<small>Tutti gli esercizi</small></div><div class='nav' data-v='detail'>MANUALE TECNICO<small>Scheda attiva</small></div></div><div class='block'><div class='bt'>ZONE</div><div class='zone active' data-z='ALL'>TUTTO PROJECT SC<small>Sistema completo</small></div><div class='zone' data-z='THE LAB'>THE LAB<small>Precisione</small></div><div class='zone' data-z='THE FORGE'>THE FORGE<small>Carico</small></div><div class='zone' data-z='THE ARENA'>THE ARENA<small>Skill</small></div></div><div class='block'><div class='bt'>ESERCIZI</div><div id='exlist'></div></div></aside>
+<main><section id='dashView' class='view'><div class='zonehero'><div class='code'>PROJECT SC OS</div><h1 class='title'>BUILT, NOT BORN.</h1><p class='lead'>Manuale tecnico, atlante esercizi e piani completi per THE LAB, THE FORGE e THE ARENA.</p></div><div class='kpis'><div class='kpi'><b id='kex'></b><span>ESERCIZI</span></div><div class='kpi'><b>3</b><span>ZONE</span></div><div class='kpi'><b id='kpl'></b><span>PIANI</span></div><div class='kpi'><b>1</b><span>OBIETTIVO MASTER</span></div></div><div id='dz' class='plans'></div></section>
+<section id='plansView' class='view hidden'><div class='code'>SC-PLANS</div><h1 class='title'>PIANI PER ZONA</h1><div id='pc'></div></section>
+<section id='catalogView' class='view hidden'><div class='code'>SC-ATLAS</div><h1 class='title'>ATLANTE COMPLETO</h1><div id='cg' class='catalog'></div></section>
+<section id='detailView' class='hidden'><div class='hero'><div>
+<div style='display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap'>
+  <div id='code' class='code'></div>
+  <button class='btn' onclick="view('plans')">← TORNA AI PIANI</button>
+</div>
+<h1 id='name'></h1><div id='real' class='real'></div>
+<div><span id='cat' class='badge'></span><span id='zb' class='badge'></span></div>
+<p id='mission' class='mission'></p>
+<a id='video' class='btn' target='_blank' rel='noopener'>APRI L’ESERCIZIO SU MUSCLEWIKI ↗</a>
+<div style='margin-top:8px;color:var(--m);font-size:9px'>Collegamento individuale al movimento specifico o al suo equivalente biomeccanico.</div>
+</div>
+<div class='art anatomy-card'>
+  <div class='anatomy-head'><b>MAPPA MUSCOLARE</b><span>FRONTE / RETRO</span></div>
+  
+<div class='anatomy-component-wrap'>
+  <div class='anatomy-view'>
+    <div class='anatomy-view-label'>FRONTE</div>
+    <div id='muscleFrontMount' class='muscle-react-mount'></div>
+  </div>
+  <div class='anatomy-view'>
+    <div class='anatomy-view-label'>RETRO</div>
+    <div id='muscleBackMount' class='muscle-react-mount'></div>
+  </div>
+</div>
+<div id='anatomyStatus' class='anatomy-status'>CARICAMENTO MAPPA ANATOMICA…</div>
+<div class='anatomy-key'>
+      <span><i class='anatomy-swatch primary'></i>PRIMARI</span>
+      <span><i class='anatomy-swatch secondary'></i>SECONDARI</span>
+    </div>
+    <div id='muscleLegend' class='muscle-legend'></div>
+</div>
+<div class='card score-card'><div class='code'>SC SCORE</div><div id='ring' class='ring'><b id='score'></b></div>
+<div style='margin-top:16px'>
+  <div class='row'><span>Attivazione muscolare</span><span id='scoreA'>—</span></div>
+  <div class='row'><span>Esecuzione tecnica</span><span id='scoreB'>—</span></div>
+  <div class='row'><span>Sicurezza</span><span id='scoreC'>—</span></div>
+  <div class='row'><span>Trasferibilità</span><span id='scoreD'>—</span></div>
+</div></div></div><div class='view'><div class='grid'><article class='card'><h3>MUSCOLI</h3><div id='muscles' class='quote'></div></article><article class='card'><h3>SETUP</h3><div id='setup' class='quote'></div></article><article class='card'><h3>ERRORI</h3><div id='errors' class='quote' style='border-color:var(--r)'></div></article><article class='card'><h3>MISSIONE</h3><div id='mission2' class='quote'></div></article></div></div></section></main></div>
+<script>
+const E=[["SC-001", "THE LAB", "THE COBRA", "Vertical Traction", "Fondatore", 98, "Gran dorsale, grande rotondo, bicipite", "Forza di tirata verticale e trasferimento alle trazioni.", "Presa neutra; sterno alto; scapole depresse; bacino stabile.", "Slancio; spalle alte; tirata dominata dai bicipiti.", "https://musclewiki.com/exercise/neutral-pulldown"], ["SC-002", "THE LAB", "THE BUILDER", "Chest Press", "Fondatore", 95, "Pettorale, tricipite, deltoide anteriore", "Massa e forza di spinta sul petto.", "Maniglie al centro petto; scapole addotte; piedi saldi.", "Spalle avanti; sedile errato; rimbalzo.", "https://musclewiki.com/exercise/machine-chest-press"], ["SC-003", "THE LAB", "THE CANNON", "Shoulder Press", "Fondatore", 93, "Deltoidi, tricipiti", "Spalle piene e forza verticale.", "Schiena aderente; presa neutra; avambracci verticali.", "Iperestensione lombare; ROM forzato.", "https://musclewiki.com/exercise/machine-neutral-overhead-press"], ["SC-004", "THE LAB", "THE WING", "Lat Machine", "Fondatore", 94, "Dorsali, bicipiti", "Ampiezza dorsale e controllo della tirata.", "Rullo cosce aderente; torace alto.", "Dietro nuca; troppo slancio; ROM corto.", "https://musclewiki.com/exercise/neutral-pulldown"], ["SC-006", "THE LAB", "THE SQUEEZE", "Pec Deck", "Costruttore", 90, "Pettorale, deltoide anteriore", "Tensione continua e volume sul petto.", "Gomiti al centro petto; scapole ferme.", "Spalle avanti; troppo allungamento.", "https://musclewiki.com/exercise/machine-pec-fly"], ["SC-007", "THE LAB", "THE CROSSLINE", "Cable Fly", "Costruttore", 88, "Pettorale, stabilizzatori scapolari", "Traiettoria personalizzabile per il petto.", "Un passo avanti; gomiti semiflessi.", "Movimento da pressa; instabilità.", "https://musclewiki.com/exercise/cable-pec-fly"], ["SC-009", "THE LAB", "THE QUAD DRIVE", "Leg Extension", "Complementare", 84, "Quadricipiti", "Lavoro diretto sul quadricipite.", "Ginocchio sul perno; schiena aderente.", "Slancio; perno errato; ROM ridotto.", "https://musclewiki.com/exercise/machine-leg-extension"], ["SC-011", "THE LAB", "THE REAR GUARD", "Reverse Pec Deck", "Rifinitore", 89, "Deltoide posteriore, romboidi", "Bilanciare il volume di spinta.", "Petto aderente; collo neutro.", "Trapezio dominante; colpo di busto.", "https://musclewiki.com/exercise/machine-reverse-fly"], ["SC-012", "THE LAB", "THE CABLE CORE", "Pallof Press", "Terapeutico", 86, "Obliqui, trasverso, core", "Anti-rotazione e controllo del tronco.", "Costole controllate; bacino neutro.", "Ruotare col cavo; carico eccessivo.", "https://musclewiki.com/exercise/cable-pallof-press"], ["SC-013", "THE LAB", "THE LEG CURL", "Leg Curl", "Complementare", 85, "Femorali", "Sviluppare i femorali con controllo.", "Ginocchio sul perno; bacino fermo.", "Sollevare il bacino; corsa breve.", "https://musclewiki.com/exercise/machine-seated-leg-curl"], ["SC-014", "THE LAB", "THE HIP LINE", "Hip Abductor", "Complementare", 78, "Gluteo medio", "Stabilità del bacino.", "Schiena stabile; movimento controllato.", "Slancio; ROM forzato.", "https://musclewiki.com/exercise/machine-hip-abduction"], ["SC-015", "THE LAB", "THE CRUNCH CORE", "Crunch Machine", "Rifinitore", 79, "Retto addominale", "Flessione controllata del tronco.", "Bacino fermo; espirazione attiva.", "Tirare con le braccia; rimbalzo.", "https://musclewiki.com/exercise/machine-crunch"], ["SC-005", "THE FORGE", "THE ANCHOR", "Chest Supported Row", "Fondatore", 96, "Romboidi, trapezio medio, dorsali", "Spessore dorsale senza slancio.", "Petto sul supporto; collo neutro.", "Staccare il petto; eccentrica corta.", "https://musclewiki.com/exercise/machine-rear-deltoid-row"], ["SC-008", "THE FORGE", "THE PREACHER", "EZ Preacher Curl", "Costruttore", 91, "Bicipite, brachiale", "Bicipiti senza slancio.", "Braccia sul supporto; polsi neutri.", "Gomiti che si staccano; rimbalzo.", "https://musclewiki.com/exercise/ez-bar-preacher-curl"], ["SC-010", "THE FORGE", "THE PRESS PLATFORM", "Leg Press", "Complementare", 87, "Quadricipiti, glutei, femorali", "Forza e massa degli arti inferiori.", "Piedi larghezza spalle; bacino aderente.", "Retroversione; ginocchia interne.", "https://musclewiki.com/exercise/machine-leg-press"], ["SC-016", "THE FORGE", "THE INCLINE BUILDER", "Incline Dumbbell Press", "Fondatore", 97, "Pettorale alto, deltoide anteriore", "Upper Chest Shelf.", "Panca 20–30°; scapole addotte.", "Panca troppo verticale; gomiti larghi.", "https://musclewiki.com/exercise/dumbbell-incline-bench-press"], ["SC-017", "THE FORGE", "THE FLAT FORGE", "Dumbbell Bench Press", "Costruttore", 92, "Pettorale, tricipiti", "Spinta libera con ampia escursione.", "Scapole stabili; piedi a terra.", "Spalle avanti; rimbalzo.", "https://musclewiki.com/exercise/dumbbell-bench-press"], ["SC-018", "THE FORGE", "THE SPIDER", "Spider Curl EZ", "Fondatore", 95, "Bicipite, brachiale", "Bicipiti in posizione stabile.", "Petto sulla panca; gomiti fermi.", "Oscillazione; spalle avanti.", "https://musclewiki.com/exercise/barbell-spider-curl"], ["SC-019", "THE FORGE", "THE ROPE EXTENSION", "Overhead Rope Extension", "Fondatore", 94, "Tricipite, capo lungo", "Massa del tricipite.", "Cavo alto; busto stabile; gomiti stretti.", "Gomiti aperti; schiena estesa.", "https://musclewiki.com/exercise/cable-overhead-tricep-extension"], ["SC-020", "THE FORGE", "THE LATERAL CAP", "Dumbbell Lateral Raise", "Fondatore", 96, "Deltoide laterale", "Costruire larghezza delle spalle.", "Manubri leggeri; gomiti morbidi.", "Slancio; trapezio dominante.", "https://musclewiki.com/exercise/dumbbell-lateral-raise"], ["SC-021", "THE FORGE", "THE HAMMER", "Hammer Curl", "Costruttore", 89, "Brachiale, brachioradiale", "Spessore del braccio e avambracci.", "Presa neutra; gomiti ai fianchi.", "Oscillare; flettere il polso.", "https://musclewiki.com/exercise/dumbbell-hammer-curl"], ["SC-022", "THE FORGE", "THE FOREARM GRIP", "Wrist Curl / Reverse Curl", "Rifinitore", 82, "Avambracci", "Popeye forearms e grip.", "Avambracci supportati; ROM controllato.", "Rimbalzo; polso deviato.", "https://musclewiki.com/exercise/dumbbell-wrist-curl"], ["SC-023", "THE FORGE", "THE ROW ENGINE", "One Arm Dumbbell Row", "Costruttore", 90, "Dorsali, romboidi, bicipite", "Tirata libera e simmetria.", "Bacino neutro; gomito verso il fianco.", "Rotazione del busto; corsa breve.", "https://musclewiki.com/exercise/dumbbell-row"], ["SC-024", "THE FORGE", "THE CALF DRIVE", "Standing Calf Raise", "Complementare", 80, "Polpacci", "Polpaccio e stabilità caviglia.", "Avampiede stabile; tallone libero.", "Rimbalzo; ROM corto.", "https://musclewiki.com/exercise/machine-standing-calf-raise"], ["SC-A01", "THE ARENA", "THE PULL-UP", "Pull-Up", "Skill Fondatrice", 100, "Dorsali, bicipiti, core, grip", "Obiettivo: tirare il proprio corpo.", "Presa prona; scapole attive.", "Kipping; mezzo ROM.", "https://musclewiki.com/exercise/pull-ups"], ["SC-A02", "THE ARENA", "THE CHIN-UP", "Chin-Up", "Skill", 95, "Dorsali, bicipiti", "Volume di trazione con bicipite.", "Presa supina; torace alto.", "Dondolio; spalle passive.", "https://musclewiki.com/exercise/chin-ups"], ["SC-A03", "THE ARENA", "THE NEUTRAL PULL", "Neutral Pull-Up", "Skill", 96, "Dorsali, brachiale", "Trazione verticale tollerabile.", "Presa neutra; core attivo.", "Scapole passive; slancio.", "https://musclewiki.com/exercise/neutral-grip-pull-ups"], ["SC-A04", "THE ARENA", "THE AUSTRALIAN", "Inverted Row", "Progressione", 91, "Dorsali, romboidi", "Base della tirata orizzontale.", "Corpo in linea; sbarra al petto.", "Bacino basso; collo avanti.", "https://musclewiki.com/exercise/inverted-row"], ["SC-A05", "THE ARENA", "THE DIP", "Parallel Bar Dip", "Skill Fondatrice", 94, "Pettorale, tricipiti", "Forza di spinta e base muscle-up.", "Scapole depresse; busto stabile.", "Spalle avanti; profondità forzata.", "https://musclewiki.com/exercise/dips"], ["SC-A06", "THE ARENA", "THE HANG", "Dead / Active Hang", "Prerequisito", 92, "Grip, dorsali", "Grip e controllo scapolare.", "Presa salda; corpo fermo.", "Dolore ignorato; dondolio.", "https://musclewiki.com/exercise/dead-hang"], ["SC-A07", "THE ARENA", "THE SCAP PULL", "Scapular Pull-Up", "Prerequisito", 95, "Trapezio basso, dorsali", "Avvio corretto della trazione.", "Gomiti estesi; scapole depresse.", "Piegare i gomiti; slancio.", "https://musclewiki.com/exercise/scapular-pull-ups"], ["SC-A08", "THE ARENA", "THE KNEE RAISE", "Hanging Knee Raise", "Costruttore", 88, "Addominali, grip", "Core sospeso e controllo bacino.", "Hang attivo; retroversione.", "Dondolio; spalle passive.", "https://musclewiki.com/exercise/hanging-knee-raises"], ["SC-A09", "THE ARENA", "THE LEG RAISE", "Hanging Leg Raise", "Skill", 92, "Addominali, grip", "Core avanzato e toes-to-bar.", "Bacino in retroversione.", "Slancio; lombare estesa.", "https://musclewiki.com/exercise/hanging-leg-raises"], ["SC-A10", "THE ARENA", "THE TOES TO BAR", "Toes-to-Bar", "Skill Avanzata", 95, "Core, dorsali, grip", "Controllo globale sospeso.", "Prerequisito: leg raise pulito.", "Kipping incontrollato.", "https://musclewiki.com/exercise/toes-to-bar"], ["SC-A11", "THE ARENA", "THE CHEST TO BAR", "Chest-to-Bar Pull-Up", "Skill Avanzata", 99, "Dorsali, bicipiti", "Passaggio verso muscle-up.", "Trazione esplosiva; sterno alla sbarra.", "Solo mento sopra sbarra.", "https://musclewiki.com/exercise/chest-to-bar-pull-up"], ["SC-A12", "THE ARENA", "THE MUSCLE-UP", "Bar Muscle-Up", "Obiettivo Master", 100, "Full body", "Obiettivo finale Strength Transfer.", "10+ pull-up, chest-to-bar e dip solidi.", "Tentarlo senza prerequisiti.", "https://musclewiki.com/exercise/muscle-up"], ["SC-A13", "THE ARENA", "THE L-SIT", "L-Sit", "Skill", 90, "Core, flessori anca", "Compressione e controllo.", "Spalle depresse; gomiti estesi.", "Spalle alte; gambe molli.", "https://musclewiki.com/exercise/bodyweight-hanging-l-sit"], ["SC-A14", "THE ARENA", "THE FRONT LEVER PATH", "Front Lever Progression", "Skill Avanzata", 96, "Dorsali, core", "Forza isometrica avanzata.", "Progressioni tuck; scapole depresse.", "Braccia piegate; progressione eccessiva.", "https://musclewiki.com/exercise/front-lever"]],P={"THE LAB": [["LAB A · PUSH PRECISION", "Petto alto, spalle e tricipiti", [["SC-016", "4×6–10"], ["SC-002", "3×8–12"], ["SC-003", "3×8–12"], ["SC-006", "3×12–15"], ["SC-020", "4×12–20"], ["SC-019", "3×10–15"], ["SC-012", "3×10/lato"]]], ["LAB B · PULL CONTROL", "Dorso, bicipiti e controllo scapolare", [["SC-001", "4×6–10"], ["SC-004", "3×8–12"], ["SC-005", "4×8–12"], ["SC-011", "3×12–20"], ["SC-018", "3×8–12"], ["SC-021", "3×10–14"]]], ["LAB C · LOWER & CORE", "Gambe efficienti e core stabile", [["SC-010", "4×8–12"], ["SC-009", "3×10–15"], ["SC-013", "3×10–15"], ["SC-014", "3×15–20"], ["SC-024", "4×10–15"], ["SC-015", "3×12–15"]]]], "THE FORGE": [["FORGE A · UPPER CHEST", "Upper Chest Shelf e forza di spinta", [["SC-016", "5×5–8"], ["SC-017", "3×8–10"], ["SC-002", "3×8–12"], ["SC-007", "3×12–15"], ["SC-020", "4×12–20"], ["SC-019", "4×8–12"]]], ["FORGE B · COBRA BACK", "Ampiezza, spessore e braccia", [["SC-001", "4×6–10"], ["SC-005", "4×6–10"], ["SC-023", "3×8–12/lato"], ["SC-011", "3×15–20"], ["SC-018", "4×8–12"], ["SC-021", "3×10–14"], ["SC-022", "3×12–20"]]], ["FORGE C · FOUNDATION", "Gambe e capacità strutturale", [["SC-010", "5×8–12"], ["SC-009", "3×10–15"], ["SC-013", "4×10–15"], ["SC-014", "3×15–20"], ["SC-024", "4×10–15"], ["SC-012", "3×10/lato"]]]], "THE ARENA": [["ARENA 1 · PULL-UP FOUNDATION", "Da hang attivo a 10 trazioni", [["SC-A06", "3×20–40s"], ["SC-A07", "4×6–10"], ["SC-A04", "4×8–15"], ["SC-A03", "5 serie tecniche"], ["SC-A01", "serie submassimali"], ["SC-A08", "3×8–15"]]], ["ARENA 2 · CHEST-TO-BAR PATH", "Trazione esplosiva e altezza", [["SC-A07", "3×8"], ["SC-A01", "4×5–8"], ["SC-A11", "6×2–4"], ["SC-A05", "4×6–10"], ["SC-A09", "3×6–12"], ["SC-A06", "2×max tecnico"]]], ["ARENA 3 · MUSCLE-UP PREP", "Prerequisiti e transizione", [["SC-A11", "5×3–5"], ["SC-A05", "5×5–8"], ["SC-A12", "drill assistiti 6×2–3"], ["SC-A10", "4×6–10"], ["SC-A13", "5×10–20s"], ["SC-A06", "grip 3×max"]]], ["ARENA 4 · SKILL CONTROL", "Core e leve", [["SC-A08", "3×10–15"], ["SC-A09", "4×6–12"], ["SC-A10", "4×5–8"], ["SC-A13", "5×10–20s"], ["SC-A14", "6×8–15s"], ["SC-A06", "2×30–45s"]]]]};let Z='ALL',C='SC-001';const $=s=>document.querySelector(s);function F(){let q=($('#search').value||'').toLowerCase();return E.filter(e=>(Z==='ALL'||e[1]===Z)&&e.join(' ').toLowerCase().includes(q))}function list(){$('#exlist').innerHTML=F().map(e=>`<div class='ex ${e[0]===C?'active':''}' data-id='${e[0]}'><b>${e[0]}</b><span>${e[2]}</span></div>`).join('');document.querySelectorAll('.ex').forEach(x=>x.onclick=()=>detail(x.dataset.id))}function view(v){['dash','plans','catalog','detail'].forEach(x=>$('#'+x+'View').classList.toggle('hidden',x!==v));document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.v===v));if(v==='plans')plans();if(v==='catalog')catalog()}function detail(id){let e=E.find(x=>x[0]===id)||E[0];C=e[0];$('#code').textContent=e[0];$('#name').textContent=e[2];$('#real').textContent=e[3];$('#cat').textContent=e[4];$('#zb').textContent=e[1];$('#mission').textContent=e[7];$('#mission2').textContent=e[7];$('#muscles').textContent=e[6];window.__pendingMuscles=e[6];if(window.renderMuscleMap)window.renderMuscleMap(e[6]);$('#setup').textContent=e[8];$('#errors').textContent=e[9];$('#video').href=e[10];$('#score').textContent=e[5];$('#ring').style.background=`conic-gradient(var(--o) 0 ${e[5]}%,#1d2228 ${e[5]}% 100%)`;$('#scoreA').textContent=e[5]+'/100';$('#scoreB').textContent=Math.max(70,e[5]-2)+'/100';$('#scoreC').textContent=Math.max(70,e[5]-5)+'/100';$('#scoreD').textContent=Math.max(70,e[5]-1)+'/100';list();view('detail')}function catalog(){$('#cg').innerHTML=F().map(e=>`<article class='cc' data-id='${e[0]}'><div class='id'>${e[0]} · ${e[1]}</div><h4>${e[2]}</h4><p>${e[3]}</p><div class='score'>${e[5]}<small>/100</small></div><p>${e[7]}</p></article>`).join('');document.querySelectorAll('.cc').forEach(x=>x.onclick=()=>detail(x.dataset.id))}function plans(){let zs=Z==='ALL'?['THE LAB','THE FORGE','THE ARENA']:[Z];$('#pc').innerHTML=zs.map(z=>`<div class='zonehero'><div class='code'>${z}</div><h2 class='title'>${z}</h2><div class='plans'>${P[z].map(p=>`<article class='plan'><h3>${p[0]}</h3><div class='goal'>${p[1]}</div>${p[2].map(i=>{let e=E.find(x=>x[0]===i[0]);return `<div class='row' data-id='${i[0]}' title='Apri scheda ${i[0]}'><span><b>${i[0]}</b><br>${e?e[2]:i[0]}</span><span>${i[1]}</span></div>`}).join('')}</article>`).join('')}</div></div>`).join('');
+ document.querySelectorAll("#pc .row[data-id]").forEach(r=>{
+   r.onclick=()=>detail(r.dataset.id);
+ });
+}function dash(){
+ $('#dz').innerHTML=['THE LAB','THE FORGE','THE ARENA'].map(z=>`<article class='plan zone-dashboard-card' data-zone='${z}'><div class='code'>${z}</div><h3 style='font-size:20px'>${E.filter(e=>e[1]===z).length} ESERCIZI</h3><div class='goal'>${P[z].length} piani operativi</div><div class='btn' style='margin-top:12px'>APRI ${z}</div></article>`).join('');
+ document.querySelectorAll('.zone-dashboard-card').forEach(card=>card.onclick=()=>{
+   Z=card.dataset.zone;
+   document.querySelectorAll('.zone').forEach(x=>x.classList.toggle('active',x.dataset.z===Z));
+   list();
+   plans();
+   view('plans');
+ });
+}document.querySelectorAll('.nav').forEach(n=>n.onclick=()=>{
+  const target=n.dataset.v;
+  if(target==='detail'){
+    detail(C || (F()[0] && F()[0][0]) || E[0][0]);
+  }else{
+    view(target);
+  }
+});document.querySelectorAll('.zone').forEach(z=>z.onclick=()=>{
+  Z=z.dataset.z;
+  document.querySelectorAll('.zone').forEach(x=>x.classList.toggle('active',x===z));
+  list();
+  catalog();
+  if(Z==='ALL'){
+    dash();
+    view('dash');
+  }else{
+    plans();
+    view('plans');
+  }
+});$('#search').oninput=()=>{list();catalog()};
+
+
+
+
+
+
+// Avvio applicazione dopo il caricamento di tutte le funzioni e delle mappe anatomiche.
+$('#kex').textContent=E.length;
+$('#kpl').textContent=Object.values(P).reduce((a,b)=>a+b.length,0);
+dash();
+list();
+plans();
+catalog();
+detail(C);
+view('dash');
+
+</script>
+<script type="module">
+import React from "https://esm.sh/react@18.3.1";
+import { createRoot } from "https://esm.sh/react-dom@18.3.1/client";
+import Body from "https://esm.sh/react-muscle-highlighter@latest?deps=react@18.3.1";
+
+const frontEl = document.getElementById("muscleFrontMount");
+const backEl = document.getElementById("muscleBackMount");
+const statusEl = document.getElementById("anatomyStatus");
+
+const frontRoot = createRoot(frontEl);
+const backRoot = createRoot(backEl);
+
+const slugRules = [
+  ["pettorale", "chest"],
+  ["petto", "chest"],
+  ["deltoide", "deltoids"],
+  ["deltoidi", "deltoids"],
+  ["spalla", "deltoids"],
+  ["bicipite", "biceps"],
+  ["bicipiti", "biceps"],
+  ["brachiale", "biceps"],
+  ["tricipite", "triceps"],
+  ["tricipiti", "triceps"],
+  ["avambraccio", "forearm"],
+  ["avambracci", "forearm"],
+  ["grip", "forearm"],
+  ["addominali", "abs"],
+  ["retto addominale", "abs"],
+  ["core", "abs"],
+  ["obliqui", "obliques"],
+  ["gran dorsale", "upper-back"],
+  ["dorsali", "upper-back"],
+  ["grande rotondo", "upper-back"],
+  ["romboidi", "upper-back"],
+  ["trapezio", "trapezius"],
+  ["lombari", "lower-back"],
+  ["gluteo", "gluteal"],
+  ["glutei", "gluteal"],
+  ["quadricipite", "quadriceps"],
+  ["quadricipiti", "quadriceps"],
+  ["quadricipiti", "quadriceps"],
+  ["femorali", "hamstring"],
+  ["hamstring", "hamstring"],
+  ["polpaccio", "calves"],
+  ["polpacci", "calves"],
+  ["tibiale", "tibialis"],
+  ["adduttori", "adductors"]
+];
+
+function muscleData(text){
+  const normalized = String(text || "").toLowerCase();
+  const names = normalized.split(",").map(x=>x.trim()).filter(Boolean);
+  const ranks = new Map();
+
+  if(normalized.includes("full body") || normalized.includes("corpo intero")){
+    [
+      "chest","deltoids","biceps","triceps","forearm",
+      "upper-back","trapezius","abs","obliques",
+      "gluteal","quadriceps","hamstring","calves"
+    ].forEach((slug,index)=>ranks.set(slug,index<8?1:2));
+  }
+
+  names.forEach((name, index)=>{
+    slugRules.forEach(([term, slug])=>{
+      if(name.includes(term)){
+        const current = ranks.get(slug);
+        const intensity = index === 0 ? 1 : 2;
+        if(!current || intensity < current) ranks.set(slug, intensity);
+      }
+    });
+  });
+
+  return Array.from(ranks, ([slug, intensity])=>({
+    slug,
+    color: intensity === 1 ? "#ff7800" : "#ffb15a",
+    styles:{
+      fill:intensity === 1 ? "#ff7800" : "#ffb15a",
+      stroke:"#ff9a32",
+      strokeWidth:1.4
+    }
+  }));
+}
+
+window.renderMuscleMap = function(text){
+  const data = muscleData(text);
+  const common = {
+    data,
+    gender:"male",
+    scale:0.75,
+    colors:["#ff7800","#ffb15a"],
+    defaultFill:"#171b20",
+    defaultStroke:"#69727d",
+    defaultStrokeWidth:1.2,
+    border:"#8d96a0"
+  };
+
+  frontRoot.render(React.createElement(Body,{...common,side:"front"}));
+  backRoot.render(React.createElement(Body,{...common,side:"back"}));
+
+  statusEl.textContent = data.length
+    ? "MAPPA SVG SEGMENTATA ATTIVA"
+    : "NESSUN GRUPPO MUSCOLARE ASSOCIATO";
+  statusEl.className = "anatomy-status ready";
+};
+
+window.renderMuscleMap(window.__pendingMuscles || "gran dorsale, grande rotondo, bicipite");
+</script>
+
+</body></html>
