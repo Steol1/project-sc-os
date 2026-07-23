@@ -1,0 +1,306 @@
+[
+  {
+    "id": "SC-001",
+    "nome_sc": "THE COBRA",
+    "esercizio": "Vertical Traction",
+    "musclewiki": "https://musclewiki.com/exercise/neutral-pulldown",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-002",
+    "nome_sc": "THE BUILDER",
+    "esercizio": "Chest Press",
+    "musclewiki": "https://musclewiki.com/exercise/machine-chest-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-003",
+    "nome_sc": "THE CANNON",
+    "esercizio": "Shoulder Press",
+    "musclewiki": "https://musclewiki.com/exercise/machine-neutral-overhead-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-004",
+    "nome_sc": "THE WING",
+    "esercizio": "Lat Machine",
+    "musclewiki": "https://musclewiki.com/exercise/neutral-pulldown",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-006",
+    "nome_sc": "THE SQUEEZE",
+    "esercizio": "Pec Deck",
+    "musclewiki": "https://musclewiki.com/exercise/machine-pec-fly",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-007",
+    "nome_sc": "THE CROSSLINE",
+    "esercizio": "Cable Fly",
+    "musclewiki": "https://musclewiki.com/exercise/cable-pec-fly",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-009",
+    "nome_sc": "THE QUAD DRIVE",
+    "esercizio": "Leg Extension",
+    "musclewiki": "https://musclewiki.com/exercise/machine-leg-extension",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-011",
+    "nome_sc": "THE REAR GUARD",
+    "esercizio": "Reverse Pec Deck",
+    "musclewiki": "https://musclewiki.com/exercise/machine-reverse-fly",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-012",
+    "nome_sc": "THE CABLE CORE",
+    "esercizio": "Pallof Press",
+    "musclewiki": "https://musclewiki.com/exercise/cable-pallof-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-013",
+    "nome_sc": "THE LEG CURL",
+    "esercizio": "Leg Curl",
+    "musclewiki": "https://musclewiki.com/exercise/machine-seated-leg-curl",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-014",
+    "nome_sc": "THE HIP LINE",
+    "esercizio": "Hip Abductor",
+    "musclewiki": "https://musclewiki.com/exercise/machine-hip-abduction",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-015",
+    "nome_sc": "THE CRUNCH CORE",
+    "esercizio": "Crunch Machine",
+    "musclewiki": "https://musclewiki.com/exercise/machine-crunch",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-005",
+    "nome_sc": "THE ANCHOR",
+    "esercizio": "Chest Supported Row",
+    "musclewiki": "https://musclewiki.com/exercise/machine-chest-supported-t-bar-row",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-008",
+    "nome_sc": "THE PREACHER",
+    "esercizio": "EZ Preacher Curl",
+    "musclewiki": "https://musclewiki.com/exercise/ez-bar-preacher-curl",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-010",
+    "nome_sc": "THE PRESS PLATFORM",
+    "esercizio": "Leg Press",
+    "musclewiki": "https://musclewiki.com/exercise/machine-leg-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-016",
+    "nome_sc": "THE INCLINE BUILDER",
+    "esercizio": "Incline Dumbbell Press",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-incline-bench-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-017",
+    "nome_sc": "THE FLAT FORGE",
+    "esercizio": "Dumbbell Bench Press",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-bench-press",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-018",
+    "nome_sc": "THE SPIDER",
+    "esercizio": "Spider Curl EZ",
+    "musclewiki": "https://musclewiki.com/exercise/barbell-spider-curl",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-019",
+    "nome_sc": "THE ROPE EXTENSION",
+    "esercizio": "Overhead Rope Extension",
+    "musclewiki": "https://musclewiki.com/exercise/cable-overhead-tricep-extension",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-020",
+    "nome_sc": "THE LATERAL CAP",
+    "esercizio": "Dumbbell Lateral Raise",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-lateral-raise",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-021",
+    "nome_sc": "THE HAMMER",
+    "esercizio": "Hammer Curl",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-hammer-curl",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-022",
+    "nome_sc": "THE FOREARM GRIP",
+    "esercizio": "Dumbbell Wrist Curl",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-wrist-curl",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-023",
+    "nome_sc": "THE ROW ENGINE",
+    "esercizio": "One Arm Dumbbell Row",
+    "musclewiki": "https://musclewiki.com/exercise/dumbbell-single-arm-row",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-024",
+    "nome_sc": "THE CALF DRIVE",
+    "esercizio": "Standing Calf Raise",
+    "musclewiki": "https://musclewiki.com/exercise/machine-standing-calf-raise",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A01",
+    "nome_sc": "THE PULL-UP",
+    "esercizio": "Pull-Up",
+    "musclewiki": "https://musclewiki.com/exercise/pull-ups",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A02",
+    "nome_sc": "THE CHIN-UP",
+    "esercizio": "Chin-Up",
+    "musclewiki": "https://musclewiki.com/exercise/chin-ups",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A03",
+    "nome_sc": "THE NEUTRAL PULL",
+    "esercizio": "Neutral Pull-Up",
+    "musclewiki": "https://musclewiki.com/exercise/neutral-grip-pull-ups",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A04",
+    "nome_sc": "THE AUSTRALIAN",
+    "esercizio": "Inverted Row",
+    "musclewiki": "https://musclewiki.com/exercise/inverted-row",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A05",
+    "nome_sc": "THE DIP",
+    "esercizio": "Parallel Bar Dip",
+    "musclewiki": "https://musclewiki.com/exercise/dips",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A06",
+    "nome_sc": "THE HANG",
+    "esercizio": "Dead / Active Hang",
+    "musclewiki": "https://musclewiki.com/exercise/dead-hang",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A07",
+    "nome_sc": "THE SCAP PULL",
+    "esercizio": "Scapular Pull-Up",
+    "musclewiki": "",
+    "esito": "NESSUN VIDEO MUSCLEWIKI ESATTO",
+    "nota": "Nessun video simile usato come sostituto."
+  },
+  {
+    "id": "SC-A08",
+    "nome_sc": "THE KNEE RAISE",
+    "esercizio": "Hanging Knee Raise",
+    "musclewiki": "https://musclewiki.com/exercise/hanging-knee-raises",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A09",
+    "nome_sc": "THE LEG RAISE",
+    "esercizio": "Hanging Leg Raise",
+    "musclewiki": "https://musclewiki.com/exercise/hanging-leg-raises",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A10",
+    "nome_sc": "THE TOES TO BAR",
+    "esercizio": "Toes-to-Bar",
+    "musclewiki": "https://musclewiki.com/exercise/toes-to-bar",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A11",
+    "nome_sc": "THE CHEST TO BAR",
+    "esercizio": "Chest-to-Bar Pull-Up",
+    "musclewiki": "https://musclewiki.com/exercise/chest-to-bar-pull-up",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A12",
+    "nome_sc": "THE MUSCLE-UP",
+    "esercizio": "Bar Muscle-Up",
+    "musclewiki": "https://musclewiki.com/exercise/muscle-up",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A13",
+    "nome_sc": "THE L-SIT",
+    "esercizio": "L-Sit",
+    "musclewiki": "https://musclewiki.com/exercise/bodyweight-hanging-l-sit",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  },
+  {
+    "id": "SC-A14",
+    "nome_sc": "THE FRONT LEVER PATH",
+    "esercizio": "Front Lever Progression",
+    "musclewiki": "https://musclewiki.com/exercise/front-lever",
+    "esito": "VERIFICATO",
+    "nota": "Collegamento diretto alla pagina esercizio."
+  }
+]
